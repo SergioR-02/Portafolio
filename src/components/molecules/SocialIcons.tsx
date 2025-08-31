@@ -19,7 +19,7 @@ const icons = [
     hover: 'hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900',
   },
   {
-    href: 'mailto:sergioruiz456@ejemplo.com',
+    href: 'mailto:sergioruiz456@gmail.com',
     label: 'Email',
     icon: Mail,
     hover: 'hover:bg-green-600 hover:text-white dark:hover:bg-green-400 dark:hover:text-gray-900',
