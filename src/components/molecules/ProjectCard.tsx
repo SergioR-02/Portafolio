@@ -12,6 +12,7 @@ interface ProjectCardProps {
     technologies: string[];
     githubUrl: string;
     liveUrl: string;
+    isDeployed?: boolean;
   };
   onClick: () => void;
   index: number;
@@ -31,7 +32,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, index }) =>
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <div className="absolute bottom-4 left-4 right-4 flex space-x-2">
-          <ExternalLinkButton href={project.liveUrl} onClick={e => e.stopPropagation()} />
+          {project.isDeployed && (
+            <ExternalLinkButton href={project.liveUrl} onClick={e => e.stopPropagation()} />
+          )}
           <GithubButton href={project.githubUrl} onClick={e => e.stopPropagation()} />
         </div>
       </div>
