@@ -58,7 +58,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToExperience }) => {
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-3xl mx-auto text-center bg-opacity-80 rounded-xl p-8">
         <div className="mb-6">
-          <ProfileImage src="https://media.licdn.com/dms/image/v2/D4E03AQF5eJLamWg7ug/profile-displayphoto-shrink_200_200/B4EZigkeJ2HIAc-/0/1755040572693?e=1759363200&v=beta&t=-omH0FEpq16CwmnL15lyXo9ec8YGisAJE0yqMvmW2gs" alt="Sergio" />
+          <ProfileImage src="/Profile.svg" alt="Sergio" />
         </div>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
           Hola, soy{' '}

@@ -5,7 +5,7 @@ import { Github, Linkedin, FileText } from 'lucide-react';
 const ContactSocialLinks: React.FC = () => (
   <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 h-auto">
     <div className="mb-6">
-      <ProfileImage src="https://media.licdn.com/dms/image/v2/D4E03AQF5eJLamWg7ug/profile-displayphoto-shrink_200_200/B4EZigkeJ2HIAc-/0/1755040572693?e=1759363200&v=beta&t=-omH0FEpq16CwmnL15lyXo9ec8YGisAJE0yqMvmW2gs" alt="Sergio" />
+      <ProfileImage src="/Profile.svg" alt="Sergio" />
     </div>
     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
       Conecta conmigo en redes profesionales
