@@ -28,7 +28,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, isDeploye
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto">
-      <div className="w-full h-full flex items-center justify-center px-2 py-6">
+      <div className="w-full h-full flex items-center justify-center p-2 sm:p-4">
         {/* Background overlay */}
         <div 
           className="fixed inset-0 bg-gray-500/60 dark:bg-gray-900/60 backdrop-blur-sm transition-opacity"
@@ -36,14 +36,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, isDeploye
         ></div>
 
         {/* Modal container */}
-        <div className="inline-block align-bottom bg-white dark:bg-gray-800 rounded-xl text-left overflow-hidden shadow-xl transform transition-all sm:my-6 sm:align-middle sm:max-w-xl sm:w-full">
+        <div className="relative w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl bg-white dark:bg-gray-800 rounded-xl text-left overflow-hidden shadow-xl transform transition-all max-h-[90vh] overflow-y-auto">
           {/* Header */}
           <ModalHeader image={project.image} title={project.title} onClose={onClose} />
 
           {/* Content */}
-          <div className="p-4 sm:p-5">
-            <div className="mb-4">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+          <div className="p-3 sm:p-4 md:p-5">
+            <div className="mb-3 sm:mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {project.title}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -52,7 +52,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, isDeploye
             </div>
 
             {/* Technologies */}
-            <div className="mb-4">
+            <div className="mb-3 sm:mb-4">
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
                 Tecnologías Utilizadas
               </h4>
@@ -64,11 +64,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, isDeploye
             </div>
 
             {/* Features */}
-            <div className="mb-5">
+            <div className="mb-4 sm:mb-5">
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
                 Características Principales
               </h4>
-              <ul className="grid sm:grid-cols-2 gap-1">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">
                 {project.features.map((feature, index) => (
                   <FeatureItem key={index} feature={feature} />
                 ))}
