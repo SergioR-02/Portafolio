@@ -6,7 +6,7 @@ const scrollToExperience = () => {
   if (experienceSection) {
     experienceSection.scrollIntoView({ behavior: 'smooth' });
     setTimeout(() => {
-      window.scrollBy({ top: -40, left: 0, behavior: 'smooth' });
+      window.scrollBy({left: 0, behavior: 'smooth' });
     }, 400);
   }
 };
