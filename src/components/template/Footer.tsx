@@ -1,5 +1,4 @@
 import React from 'react';
-import { Heart } from 'lucide-react';
 import SocialIcons from '../molecules/SocialIcons';
 import QuickLinks from '../molecules/QuickLinks';
 
@@ -31,7 +30,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 dark:border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Mi Portfolio. Sergio Ruiz
+              © {currentYear} Mi Portafolio. Sergio Ruiz
             </p>
           </div>
         </div>
