@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Brand Section */}
           <div className="space-y-4 flex flex-col items-center text-center">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              Mi Portfolio
+              Mi Portafolio
             </h3>
             <p className="text-gray-400 leading-relaxed max-w-xs">
               Desarrollador Full Stack apasionado por crear soluciones web innovadoras que combinan funcionalidad excepcional con diseño elegante.
