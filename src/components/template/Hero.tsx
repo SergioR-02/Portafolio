@@ -1,16 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import HeroSection from '../organisms/HeroSection';
 
-const scrollToExperience = () => {
-  const experienceSection = document.getElementById('experience');
-  if (experienceSection) {
-    experienceSection.scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => {
-      window.scrollBy({left: 0, behavior: 'smooth' });
-    }, 400);
-  }
-};
+const Hero: React.FC = () => {
+  const navigate = useNavigate();
 
-const Hero: React.FC = () => <HeroSection scrollToExperience={scrollToExperience} />;
+  const scrollToExperience = () => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById('experience');
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 40;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 400);
+    } else {
+      setTimeout(() => {
+        const el = document.getElementById('experience');
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 40;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
+  return <HeroSection scrollToExperience={scrollToExperience} />;
+};
 
 export default Hero;

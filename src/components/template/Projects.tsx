@@ -40,7 +40,7 @@ const Projects: React.FC = () => {
       description: 'Plataforma que utiliza IA para detectar ingredientes en imágenes de alimentos y calcular su información nutricional en tiempo real.',
       image: '/NutriVisionAI.svg',
       technologies: ['React', 'Python', 'Tailwind CSS', 'FastAPI', 'Gemini', 'OpenCV'],
-      githubUrl: 'https://github.com',
+      githubUrl: 'https://github.com/SergioR-02/NutriVision',
       liveUrl: 'https://example.com',
       fullDescription: 'Una aplicación web que integra Inteligencia Artificial para analizar imágenes de alimentos. El sistema utiliza Google Gemini para detectar ingredientes, OpenCV para procesar la imagen y generar *bounding boxes*, y presenta los resultados con un análisis nutricional completo y una visualización 3D interactiva.',
       features: ['Detección de ingredientes con IA', 'Bounding boxes sobre alimentos', 'Carga de imágenes drag & drop', 'API RESTful con FastAPI', 'Visualización 3D interactiva'],
