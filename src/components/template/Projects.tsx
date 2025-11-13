@@ -48,6 +48,19 @@ const Projects: React.FC = () => {
     },
     {
       id: 3,
+      title: 'Eventos UNAL - Sistema de Gestión de Eventos',
+      description: 'Gestión y visualización de eventos de la Universidad Nacional de Colombia (React + Strapi).',
+      image: '/EventosUnal.svg',
+      technologies: ['React', 'TypeScript', 'Vite', 'Strapi', 'Tailwind CSS', 'Docker', 'Vercel'],
+      githubUrl: 'https://github.com/SergioR-02/Eventos_Unal',
+      liveUrl: 'https://eventos-unal.vercel.app',
+      fullDescription: 'Sistema web para la gestión y visualización de eventos de la Universidad Nacional de Colombia. Frontend en React + TypeScript + Vite y backend con Strapi v5 como Headless CMS. Incluye búsqueda dinámica, filtros por categoría, vistas detalladas, diseño responsive y modo claro/oscuro. Dockerizado y desplegado en Vercel (frontend) y Strapi Cloud (backend).',
+      features: ['Listado y búsqueda dinámica de eventos', 'Filtrado por categoría', 'Vista detallada de cada evento', 'Renderizado de Rich Text con @strapi/blocks-react-renderer', 'Modo claro/oscuro persistente', 'Dockerización y despliegue en la nube'],
+      isDeployed: true
+    },
+
+    {
+      id: 4,
       title: 'Objetos Perdidos UNAL',
       description: 'Plataforma para gestionar objetos perdidos y encontrados en la Universidad Nacional, construida con arquitectura MVC y Atomic Design.',
       image: '/ObjetosPerdidos.svg',
@@ -59,9 +72,9 @@ const Projects: React.FC = () => {
       isDeployed: true
     },
     {
-      id: 4,
+      id: 5,
       title: 'EcoScan 3D - Análisis de Reciclaje con IA',
-      description: 'Plataforma que utiliza IA para detectar ingredientes en imágenes de alimentos y calcular su información nutricional en tiempo real.',
+      description: 'Plataforma que utiliza IA para identificar y clasificar residuos a partir de imágenes, ofreciendo recomendaciones de reciclaje y visualizaciones 3D interactivas.',
       image: '/EcoScan.svg',
       technologies: ['Three.js', 'React', 'Python', 'Flask', 'YOLOv5', 'WebSockets', 'OpenAI API'],
       githubUrl: 'https://github.com/SergioR-02/computacion-visual-grupo/tree/main/proyecto',
