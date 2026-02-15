@@ -206,9 +206,9 @@ interface ThemeContextType {
 
 ## 📞 **CONTACTO**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sergio_Rodriguez-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sergio-rodriguez)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sergio_Ruiz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sergio-ruiz-75818a28b/)
 [![GitHub](https://img.shields.io/badge/GitHub-SergioR--02-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SergioR-02)
-[![Email](https://img.shields.io/badge/Email-sergio@example.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sergio@example.com)
+[![Email](https://img.shields.io/badge/Email-sergioruiz456@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sergioruiz456@gmail.com)
 
 ---
 
