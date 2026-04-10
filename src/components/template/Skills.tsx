@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLightbulb, FaUsers } from 'react-icons/fa';
+import { FaLightbulb, FaUsers, FaCogs } from 'react-icons/fa';
 import AcademicInfoCard from '../molecules/AcademicInfoCard';
 import SkillsGrid from '../organisms/SkillsGrid';
 import SkillCategoryCard from '../molecules/SkillCategoryCard';
@@ -12,6 +12,11 @@ const Skills: React.FC = () => {
       category: 'Diseño/UI',
       icon: FaLightbulb,
       skills: ['Figma', 'Adobe XD']
+    },
+    {
+      category: 'Orquestadores de Agentes & Workflow',
+      icon: FaCogs,
+      skills: ['n8n', 'LangGraph', 'CrewAI', 'LangChain', 'MCPs']
     },
     {
       category: 'Soft Skills',
