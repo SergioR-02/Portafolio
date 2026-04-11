@@ -25,7 +25,7 @@ const icons = [
     hover: 'hover:bg-green-600 hover:text-white dark:hover:bg-green-400 dark:hover:text-gray-900',
   },
   {
-    href: 'https://drive.google.com/file/d/1CHmy46AHCYsGI-5WMDKeoXVzOkF8N2HT/view?usp=sharing',
+    href: 'https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing',
     label: 'CV PDF',
     icon: FileText,
     hover: 'hover:bg-red-600 hover:text-white dark:hover:bg-red-400 dark:hover:text-gray-900',

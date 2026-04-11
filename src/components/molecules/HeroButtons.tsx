@@ -12,7 +12,7 @@ const HeroButtons: React.FC = () => {
       >
         Ver Proyectos
       </Button>
-      <a href="/Sergio-Alejandro-Ruiz-Hurtado-CV.pdf" download="Sergio-Alejandro-Ruiz-Hurtado-CV.pdf" target="_blank" rel="noopener noreferrer">
+      <a href="https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing" target="_blank" rel="noopener noreferrer">
         <Button
           className="bg-gray-200 text-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors px-6 py-2 rounded-lg shadow-md"
         >

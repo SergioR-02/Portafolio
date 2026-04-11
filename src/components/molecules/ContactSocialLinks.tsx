@@ -30,7 +30,7 @@ const ContactSocialLinks: React.FC = () => (
         <span className="font-semibold text-gray-900 dark:text-white">LinkedIn</span>
       </a>
       <a
-        href="https://drive.google.com/file/d/1CHmy46AHCYsGI-5WMDKeoXVzOkF8N2HT/view?usp=sharing"
+        href="https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white dark:bg-gray-900 shadow hover:shadow-md border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-200"
