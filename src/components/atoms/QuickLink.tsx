@@ -10,7 +10,7 @@ interface QuickLinkProps {
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
   if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 64;
+    const y = el.getBoundingClientRect().top + window.scrollY - 10;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 }
