@@ -1,38 +1,94 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
+import { motion, useMotionValue, useSpring } from 'motion/react';
+
+const DARK_BG = 'linear-gradient(to bottom, #06060c 0%, #020204 55%, #000000 100%)';
+const LIGHT_BG = 'linear-gradient(to bottom, #ffffff 0%, #fcfcfd 55%, #f4f7fb 100%)';
+const STAR_FIELD_HEIGHT = 4000;
+const STAR_FIELD_SPREAD = 8000;
+
+function generateStars(count: number, color: string): string {
+  const shadows: string[] = [];
+  for (let i = 0; i < count; i++) {
+    const x = Math.floor(Math.random() * STAR_FIELD_SPREAD) - STAR_FIELD_SPREAD / 2;
+    const y = Math.floor(Math.random() * STAR_FIELD_SPREAD) - STAR_FIELD_SPREAD / 2;
+    shadows.push(`${x}px ${y}px ${color}`);
+  }
+  return shadows.join(', ');
+}
+
+interface StarLayerProps {
+  count: number;
+  size: number;
+  duration: number;
+  starColor: string;
+}
+
+const StarLayer: React.FC<StarLayerProps> = ({ count, size, duration, starColor }) => {
+  const boxShadow = useMemo(
+    () => generateStars(count, starColor),
+    [count, starColor]
+  );
+  const style = { width: `${size}px`, height: `${size}px`, boxShadow };
+
+  return (
+    <motion.div
+      animate={{ y: [0, -STAR_FIELD_HEIGHT] }}
+      transition={{ repeat: Infinity, duration, ease: 'linear' }}
+      className="absolute top-0 left-0 w-full"
+      style={{ height: `${STAR_FIELD_HEIGHT}px` }}
+    >
+      <div className="absolute bg-transparent rounded-full" style={style} />
+      <div className="absolute bg-transparent rounded-full" style={{ ...style, top: `${STAR_FIELD_HEIGHT}px` }} />
+    </motion.div>
+  );
+};
 
 interface StarsBackgroundProps {
   theme: string;
 }
 
 const StarsBackground: React.FC<StarsBackgroundProps> = ({ theme }) => {
-  const stars = useMemo(() => Array.from({ length: 40 }, (_, i) => {
-    const size = Math.random() * 2 + 1;
-    const top = Math.random() * 100;
-    const left = Math.random() * 100;
-    const duration = Math.random() * 2 + 1;
-    return (
-      <div
-        key={i}
-        className="absolute rounded-full bg-white opacity-80 animate-pulse"
-        style={{
-          width: `${size}px`,
-          height: `${size}px`,
-          top: `${top}%`,
-          left: `${left}%`,
-          animationDuration: `${duration}s`
-        }}
-      />
-    );
-  }), [theme]);
+  const isDark = theme === 'dark';
+  const starColor = isDark ? 'rgba(255,255,255,0.75)' : 'rgba(99,102,241,0.4)';
+  const starSizeMultiplier = isDark ? 1 : 1.5;
 
-  const lightBg = 'radial-gradient(circle at 50% 30%, #c7d2fe 0%, #f3f4f6 60%, #e0e7ff 100%)';
-  const darkBg = 'radial-gradient(circle at 50% 30%, #312e81 0%, #1e1b4b 20%, #0a0a23 40%, #000 80%, #000 100%)';
+  const offsetX = useMotionValue(0);
+  const offsetY = useMotionValue(0);
+  const springX = useSpring(offsetX, { stiffness: 50, damping: 20 });
+  const springY = useSpring(offsetY, { stiffness: 50, damping: 20 });
+
+  useEffect(() => {
+    let rafId = 0;
+    let pendingX = 0;
+    let pendingY = 0;
+
+    const onMouseMove = (e: MouseEvent) => {
+      pendingX = e.clientX;
+      pendingY = e.clientY;
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        offsetX.set(-(pendingX - window.innerWidth / 2) * 0.025);
+        offsetY.set(-(pendingY - window.innerHeight / 2) * 0.025);
+        rafId = 0;
+      });
+    };
+
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      cancelAnimationFrame(rafId);
+    };
+  }, [offsetX, offsetY]);
 
   return (
-    <div className="absolute inset-0 -z-10 pointer-events-none">
-      <div className="w-full h-full" style={{ background: theme === 'dark' ? darkBg : lightBg }} />
-      {stars}
-      <div className={`absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-3xl ${theme === 'dark' ? 'bg-indigo-900 opacity-40' : 'bg-indigo-400 opacity-30'}`} />
+    <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0" style={{ background: isDark ? DARK_BG : LIGHT_BG }} />
+      <motion.div style={{ x: springX, y: springY }}>
+        <StarLayer count={1100} size={1 * starSizeMultiplier} duration={60} starColor={starColor} />
+        <StarLayer count={500} size={2 * starSizeMultiplier} duration={120} starColor={starColor} />
+        <StarLayer count={220} size={3 * starSizeMultiplier} duration={180} starColor={starColor} />
+        <StarLayer count={80} size={4 * starSizeMultiplier} duration={240} starColor={starColor} />
+      </motion.div>
     </div>
   );
 };

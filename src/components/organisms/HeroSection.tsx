@@ -1,83 +1,77 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '../../contexts/useScrollAnimation';
-import ProfileImage from '../atoms/ProfileImage';
-import SocialIcons from '../molecules/SocialIcons';
-import HeroButtons from '../molecules/HeroButtons';
+import { useTheme } from '../../contexts/ThemeContext';
+import GLSLHills from '../ui/glsl-hills';
 import ScrollDownIndicator from '../atoms/ScrollDownIndicator';
 
-const texts = [
-  'Desarrollador Full Stack',
-  'Creador de Experiencias Web',
-  'Especialista en React',
-  'Innovador Digital'
-];
-
-interface HeroSectionProps {
-  scrollToExperience: () => void;
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.scrollY - 10;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ scrollToExperience }) => {
+const HeroSection: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const { t } = useTranslation();
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
+  const texts = t('hero.typingTexts', { returnObjects: true }) as string[];
+  const firstText = texts[0];
 
   useEffect(() => {
+    setDisplayText('');
+    setCurrentIndex(0);
+    setIsDeleting(false);
+  }, [firstText]);
+
+  useEffect(() => {
+    const currentText = texts[currentIndex];
     const timeout = setTimeout(() => {
-      const currentText = texts[currentIndex];
       if (!isDeleting) {
         if (displayText.length < currentText.length) {
           setDisplayText(currentText.slice(0, displayText.length + 1));
         } else {
           setTimeout(() => setIsDeleting(true), 2000);
         }
+      } else if (displayText.length > 0) {
+        setDisplayText(currentText.slice(0, displayText.length - 1));
       } else {
-        if (displayText.length > 0) {
-          setDisplayText(currentText.slice(0, displayText.length - 1));
-        } else {
-          setIsDeleting(false);
-          setCurrentIndex((prev) => (prev + 1) % texts.length);
-        }
+        setIsDeleting(false);
+        setCurrentIndex((prev) => (prev + 1) % texts.length);
       }
     }, isDeleting ? 50 : 100);
+
     return () => clearTimeout(timeout);
-  }, [displayText, currentIndex, isDeleting]);
+  }, [displayText, currentIndex, isDeleting, texts]);
 
   return (
     <section
       id="home"
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-24 px-4 md:px-8 lg:px-32 flex flex-col items-center justify-center min-h-screen transition-all duration-700 ease-out transform relative ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 py-24 transition-all duration-700 ease-out transform md:px-8 lg:px-32 ${isDark ? 'bg-black' : 'bg-slate-50'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-[10%] w-96 h-96 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-3/4 w-96 h-96 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
-        <div className="absolute top-[14%] right-1/4 w-32 h-32 bg-gradient-to-r from-green-400 to-teal-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-3000"></div>
+      <div className="absolute inset-0">
+        <GLSLHills width="100%" height="100%" cameraZ={120} planeSize={256} speed={0.45} />
       </div>
-      <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-3xl mx-auto text-center bg-opacity-80 rounded-xl p-8">
-        <div className="mb-6">
-          <ProfileImage src="/Profile.svg" alt="Sergio" />
-        </div>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-          Hola, soy{' '}
-          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Sergio!
-          </span>
+      <div className={`absolute inset-0 ${isDark ? 'bg-black/35' : 'bg-white/30'}`} />
+      <div className="relative z-10 flex w-full max-w-4xl flex-col items-center justify-center text-center">
+        <h1 className={`mx-auto text-5xl font-semibold leading-none tracking-tight md:text-7xl lg:text-8xl ${isDark ? 'text-white' : 'text-slate-900'}`}>
+          {t('hero.name')}
         </h1>
-        <div className="h-10 md:h-12 mb-6">
-          <h2 className="text-lg md:text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-300">
-            {displayText}
-            <span className="animate-pulse">|</span>
+        <div className="mt-5 h-8 md:h-10">
+          <h2 className={`text-base font-medium md:text-xl lg:text-2xl ${isDark ? 'text-white/85' : 'text-slate-700'}`}>
+            <span className="italic font-light">{displayText}</span>
+            <span className={`ml-1 animate-pulse ${isDark ? 'text-white' : 'text-slate-700'}`}>|</span>
           </h2>
         </div>
-        <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Estudiante de Ingeniería de Sistemas y <span className="text-blue-600 dark:text-blue-400 font-semibold">Desarrollador Full Stack</span> con experiencia en <span className="text-blue-600 dark:text-blue-400 font-semibold">React</span> y <span className="text-blue-600 dark:text-blue-400 font-semibold">Express</span>. Apasionado por crear soluciones escalables y eficientes, especializado en <span className="text-blue-600 dark:text-blue-400 font-semibold">APIs REST</span>, metodologías ágiles como <span className="text-blue-600 dark:text-blue-400 font-semibold">Gitflow</span> y con sólidos conocimientos en patrones de diseño.
-        </p>
-        <HeroButtons />
-        <SocialIcons />
-        <ScrollDownIndicator onClick={scrollToExperience} />
+        <ScrollDownIndicator onClick={() => scrollToSection('about')} className="bottom-7 md:bottom-7" />
       </div>
     </section>
   );
