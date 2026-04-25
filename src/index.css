@@ -83,6 +83,15 @@ body {
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Animation Classes */
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out;
@@ -103,6 +112,26 @@ body {
 
 .animate-slide-in-right {
   animation: slide-in-right 0.8s ease-out;
+}
+
+.marquee {
+  overflow: visible;
+  padding-block: 0.2rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
 }
 
 /* Animation Delays */
@@ -173,5 +202,10 @@ textarea:focus-visible {
   
   html {
     scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
   }
 }

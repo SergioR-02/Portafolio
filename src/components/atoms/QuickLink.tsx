@@ -1,59 +1,44 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 interface QuickLinkProps {
   label: string;
+  anchor?: string;
   to?: string;
-  scroll?: boolean;
 }
 
-const QuickLink: React.FC<QuickLinkProps> = ({ label, to }) => {
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}
+
+const QuickLink: React.FC<QuickLinkProps> = ({ label, anchor, to }) => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   if (to) {
     return (
-      <Link
-        to={to}
-        onClick={to === '/'
-          ? () => {
-              setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }, 100);
-            }
-          : undefined
-        }
-        className="text-gray-400 hover:text-white hover:pl-2 transition-all duration-200"
-      >
+      <Link to={to} className="text-gray-400 hover:text-white hover:pl-2 transition-all duration-200">
         {label}
       </Link>
     );
   }
 
-  // For scroll link (e.g., Experiencia)
   return (
     <button
       onClick={() => {
-        if (window.location.pathname !== '/') {
+        if (!anchor) return;
+        if (pathname !== '/') {
           navigate('/');
-          setTimeout(() => {
-            const el = document.getElementById('experience');
-            if (el) {
-              const y = el.getBoundingClientRect().top + window.scrollY - 40;
-              window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-          }, 400);
+          setTimeout(() => scrollToSection(anchor), 300);
         } else {
-          setTimeout(() => {
-            const el = document.getElementById('experience');
-            if (el) {
-              const y = el.getBoundingClientRect().top + window.scrollY - 40;
-              window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-          }, 100);
+          scrollToSection(anchor);
         }
       }}
-      className="text-gray-400 hover:text-white hover:pl-2 transition-all duration-200 bg-transparent border-none"
-      style={{ cursor: 'pointer' }}
+      className="text-gray-400 hover:text-white hover:pl-2 transition-all duration-200 bg-transparent border-none cursor-pointer"
     >
       {label}
     </button>
