@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Sergio!",
+    "typingTexts": [
+      "Desarrollador Full Stack",
+      "Creador de Experiencias Web",
+      "Especialista en React",
+      "Innovador Digital"
+    ],
+    "bio": "Estudiante de Ingeniería de Sistemas y <b>Desarrollador Full Stack</b> con experiencia en <b>React</b> y <b>Express</b>. Apasionado por crear soluciones escalables y eficientes, especializado en <b>APIs REST</b>, metodologías ágiles como <b>Gitflow</b> y con sólidos conocimientos en patrones de diseño.",
+    "viewProjects": "Ver Proyectos",
+    "downloadCV": "Descargar CV"
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "period": "Mayo 2024 – Actualidad",
+    "position": "Frontend Developer",
+    "company": "Sitlen",
+    "description": "Diseño e implementación de interfaces web responsivas con enfoque en accesibilidad y experiencia de usuario, integración de nuevas funcionalidades siguiendo buenas prácticas y patrones de diseño, y optimización del rendimiento y SEO del producto.",
+    "certifications": {
+      "title": "Certificaciones",
+      "devcamp": {
+        "title": "Desarrollo Web Full Stack",
+        "date": "Diciembre 2024",
+        "description": "Formación integral en desarrollo web moderno: uso de Node.js y Express para el backend, React y Tailwind CSS para la creación de interfaces dinámicas y responsivas, implementación de patrones de diseño y manejo de bases de datos relacionales y no relacionales."
+      },
+      "oracle": {
+        "title": "Programa ONE Front-end",
+        "date": "Julio 2024",
+        "description": "Certificación internacional en desarrollo frontend con Oracle y Alura. Formación en React con uso de hooks, manejo de React Router para navegación, integración de librerías externas, diseño responsivo, consumo de APIs y aplicación de buenas prácticas de programación."
+      }
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Una selección de proyectos que demuestran mi experiencia en desarrollo web moderno y diseño innovador.",
+    "items": [
+      {
+        "id": 1,
+        "title": "DevCampus - Plataforma de Cursos",
+        "description": "Plataforma moderna de cursos online con búsqueda, filtros dinámicos y un panel de administración completo construido con Strapi.",
+        "fullDescription": "Una plataforma de cursos online moderna construida con React y Strapi CMS. Permite a los usuarios explorar, ver su temario, buscar cursos por título y filtrarlos dinámicamente por nivel de dificultad. Incluye un diseño responsive, tema oscuro y un panel de administración para la gestión de contenido.",
+        "features": ["Búsqueda avanzada por título", "Filtros dinámicos por nivel", "Diseño responsivo", "Tema oscuro moderno", "Renderizado de Rich Text"]
+      },
+      {
+        "id": 2,
+        "title": "NutriVision AI - Análisis Nutricional",
+        "description": "Plataforma que utiliza IA para detectar ingredientes en imágenes de alimentos y calcular su información nutricional en tiempo real.",
+        "fullDescription": "Una aplicación web que integra Inteligencia Artificial para analizar imágenes de alimentos. El sistema utiliza Google Gemini para detectar ingredientes, OpenCV para procesar la imagen y generar bounding boxes, y presenta los resultados con un análisis nutricional completo y una visualización 3D interactiva.",
+        "features": ["Detección de ingredientes con IA", "Bounding boxes sobre alimentos", "Carga de imágenes drag & drop", "API RESTful con FastAPI", "Visualización 3D interactiva"]
+      },
+      {
+        "id": 3,
+        "title": "Eventos UNAL - Sistema de Gestión de Eventos",
+        "description": "Gestión y visualización de eventos de la Universidad Nacional de Colombia (React + Strapi).",
+        "fullDescription": "Sistema web para la gestión y visualización de eventos de la Universidad Nacional de Colombia. Frontend en React + TypeScript + Vite y backend con Strapi v5 como Headless CMS. Incluye búsqueda dinámica, filtros por categoría, vistas detalladas, diseño responsive y modo claro/oscuro. Dockerizado y desplegado en Vercel (frontend) y Strapi Cloud (backend).",
+        "features": ["Listado y búsqueda dinámica de eventos", "Filtrado por categoría", "Vista detallada de cada evento", "Renderizado de Rich Text con @strapi/blocks-react-renderer", "Modo claro/oscuro persistente", "Dockerización y despliegue en la nube"]
+      },
+      {
+        "id": 4,
+        "title": "Objetos Perdidos UNAL",
+        "description": "Plataforma para gestionar objetos perdidos y encontrados en la Universidad Nacional, construida con arquitectura MVC y Atomic Design.",
+        "fullDescription": "Una plataforma web completa diseñada para gestionar eficientemente la pérdida y recuperación de objetos en los campus de la UNAL. Utiliza una arquitectura MVC en el backend con Express y TypeScript, y un sistema de diseño Atómico en el frontend con React para máxima escalabilidad y mantenimiento.",
+        "features": ["Autenticación segura con JWT", "Testing & Development", "Creación y gestión de reportes", "Arquitectura backend MVC", "Diseño frontend Atómico"]
+      },
+      {
+        "id": 5,
+        "title": "EcoScan 3D - Análisis de Reciclaje con IA",
+        "description": "Plataforma que utiliza IA para identificar y clasificar residuos a partir de imágenes, ofreciendo recomendaciones de reciclaje y visualizaciones 3D interactivas.",
+        "fullDescription": "EcoScan 3D es una innovadora plataforma web que educa sobre el reciclaje. Permite a los usuarios analizar residuos subiendo una imagen o usando su cámara en tiempo real. La aplicación combina la detección de objetos con YOLOv5, la generación de consejos personalizados con ChatGPT y una visualización 3D interactiva con Three.js, creando una experiencia educativa y atractiva.",
+        "features": ["Detección de residuos con IA (YOLOv5)", "Visualización 3D interactiva", "Consejos de reciclaje con ChatGPT", "Análisis desde imagen estática", "Detección en tiempo real (Cámara)", "Comunicación vía WebSockets"]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "academic": {
+      "title": "Información Académica",
+      "degree": "Ingeniería de Sistemas y Computación",
+      "university": "Universidad Nacional de Colombia • 2022-2026",
+      "status": "En curso"
+    },
+    "techTitle": "Lenguajes y Tecnología",
+    "backend": "Backend",
+    "databases": "Bases de datos",
+    "devops": "DevOps / CI/CD",
+    "frontend": "Frontend",
+    "versionControl": "Control de versiones",
+    "methodologies": "Metodologías",
+    "otherSkills": "Otras Skills",
+    "design": "Diseño/UI",
+    "orchestrators": "Orquestadores de Agentes & Workflow",
+    "softSkills": "Soft Skills",
+    "softSkillsList": ["Trabajo en equipo", "Liderazgo", "Comunicación efectiva", "Resolución de problemas"],
+    "languages": {
+      "title": "Idiomas",
+      "spanish": "Español: Nativo",
+      "english": "Inglés: Intermedio"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "connectWith": "Conecta conmigo en redes profesionales",
+    "infoTitle": "Información de Contacto",
+    "email": "Email",
+    "location": "Ubicación",
+    "locationValue": "Bogotá, Colombia",
+    "whyTitle": "¿Por qué trabajar conmigo?",
+    "reasons": [
+      "Código limpio y documentado",
+      "Adaptabilidad a distintos entornos y tecnologías",
+      "Orientación a la experiencia del usuario",
+      "Actualización constante en nuevas tecnologías"
+    ]
+  },
+  "footer": {
+    "brand": "Mi Portafolio",
+    "description": "Desarrollador Full Stack apasionado por crear soluciones web innovadoras que combinan funcionalidad excepcional con diseño elegante.",
+    "quickLinks": "Enlaces Rápidos",
+    "copyright": "Mi Portafolio. Sergio Ruiz"
+  },
+  "common": {
+    "viewMore": "Ver más",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código",
+    "usedTechnologies": "Tecnologías Utilizadas",
+    "mainFeatures": "Características Principales"
+  }
+}
