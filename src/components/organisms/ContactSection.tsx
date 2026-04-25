@@ -19,10 +19,9 @@ const ContactSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 mt-10">
-            {t('contact.title')}
+          <h2 className="text-4xl font-bold uppercase tracking-[0.35em] text-gray-900 dark:text-gray-300 mb-3 mt-10">
+            {t('nav.contact')}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-8" />
         </div>
         <div className="grid lg:grid-cols-2 gap-16">
           <ContactSocialLinks />
