@@ -64,7 +64,9 @@ const HeroSection: React.FC = () => {
             <span className={`ml-1 animate-pulse ${isDark ? 'text-white' : 'text-slate-700'}`}>|</span>
           </h2>
         </div>
-        <ScrollDownIndicator onClick={() => scrollToSection('about')} className="bottom-7 md:bottom-7" />
+        <div className="mt-10">
+          <ScrollDownIndicator onClick={() => scrollToSection('about')} />
+        </div>
       </div>
     </section>
   );

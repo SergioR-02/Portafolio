@@ -1,21 +1,29 @@
 import React from 'react';
-import CategoryTag from '../atoms/CategoryTag';
 
-interface SkillCategoryCardProps {
-  icon: React.ElementType;
-  category: string;
-  skills: string[];
+interface SkillItem {
+  label: string;
+  icon?: React.ReactNode;
 }
 
-const SkillCategoryCard: React.FC<SkillCategoryCardProps> = ({ icon: Icon, category, skills }) => (
-  <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:border-purple-300 dark:hover:border-purple-600 bg-white dark:bg-gray-900">
-    <div className="flex items-center mb-4">
-      <Icon className="w-6 h-6 text-purple-600 mr-3" />
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{category}</h3>
-    </div>
-    <div className="flex flex-wrap gap-2">
-      {skills.map((skill, idx) => (
-        <CategoryTag key={idx} className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 hover:bg-purple-200 dark:hover:bg-purple-800">{skill}</CategoryTag>
+interface SkillCategoryCardProps {
+  category: string;
+  skills: SkillItem[];
+}
+
+const SkillCategoryCard: React.FC<SkillCategoryCardProps> = ({ category, skills }) => (
+  <div className="grid grid-cols-[170px_1fr] gap-6 py-5 items-start">
+    <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-600 dark:text-gray-400 pt-0.5 leading-tight break-words">
+      {category}
+    </span>
+    <div className="flex flex-wrap gap-x-7 gap-y-3">
+      {skills.map(({ label, icon }, idx) => (
+        <span
+          key={idx}
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
+          {icon}
+          {label}
+        </span>
       ))}
     </div>
   </div>
