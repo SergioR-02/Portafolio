@@ -21,12 +21,45 @@
     "viewProjects": "View Projects",
     "downloadCV": "Download CV"
   },
+  "about": {
+    "focusLabel": "Focus",
+    "focusText": "Software development with a systemic vision. I design frontend and backend architectures that support clean, scalable interfaces, prioritizing performance, code maintainability, and an excellent user experience."
+  },
   "experience": {
-    "title": "Work Experience",
-    "period": "May 2024 – Present",
-    "position": "Frontend Developer",
-    "company": "Sitlen",
-    "description": "Design and implementation of responsive web interfaces focused on accessibility and user experience, integration of new features following best practices and design patterns, and optimization of product performance and SEO.",
+    "title": "Experience",
+    "items": [
+      {
+        "role": "Teaching Assistant · Programming",
+        "entity": "Universidad Nacional de Colombia",
+        "period": "Apr – Aug 2024",
+        "location": "",
+        "points": [
+          "Guided students through core programming concepts including debugging techniques, algorithm design, and problem decomposition",
+          "Managed session logistics and academic progress tracking to support structured, outcome-focused learning"
+        ]
+      },
+      {
+        "role": "Frontend Developer",
+        "entity": "Sitlen",
+        "period": "May 2024 – Oct 2025",
+        "location": "Bogotá D.C., Colombia",
+        "points": [
+          "Developed and shipped responsive UI features in React, TypeScript, and Tailwind CSS; coordinated cross-functional work via JIRA and Git Flow",
+          "Applied SEO best practices and performance optimizations — code splitting and lazy loading — improving key product metrics",
+          "Established atomic design patterns across the codebase, reducing duplication and accelerating feature delivery velocity"
+        ]
+      },
+      {
+        "role": "Web Maintenance",
+        "entity": "LAB1O1",
+        "period": "Dec 2025",
+        "location": "",
+        "points": [
+          "Performed maintenance and content updates on the official IUB institutional website, resolving layout inconsistencies and cross-browser compatibility issues",
+          "Authored a structured CMS usage manual enabling non-technical staff to manage content independently"
+        ]
+      }
+    ],
     "certifications": {
       "title": "Certifications",
       "devcamp": {
@@ -99,7 +132,7 @@
     "methodologies": "Methodologies",
     "otherSkills": "Other Skills",
     "design": "Design/UI",
-    "orchestrators": "Agent & Workflow Orchestrators",
+    "orchestrators": "Orchestrators",
     "softSkills": "Soft Skills",
     "softSkillsList": ["Teamwork", "Leadership", "Effective communication", "Problem-solving"],
     "languages": {

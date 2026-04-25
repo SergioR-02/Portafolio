@@ -21,12 +21,45 @@
     "viewProjects": "Ver Proyectos",
     "downloadCV": "Descargar CV"
   },
+  "about": {
+    "focusLabel": "Enfoque",
+    "focusText": "Desarrollo de software con visión sistémica. Diseño arquitecturas frontend y backend que soportan interfaces limpias y escalables, priorizando el rendimiento, la mantenibilidad del código y una excelente experiencia funcional."
+  },
   "experience": {
-    "title": "Experiencia Laboral",
-    "period": "Mayo 2024 – Actualidad",
-    "position": "Frontend Developer",
-    "company": "Sitlen",
-    "description": "Diseño e implementación de interfaces web responsivas con enfoque en accesibilidad y experiencia de usuario, integración de nuevas funcionalidades siguiendo buenas prácticas y patrones de diseño, y optimización del rendimiento y SEO del producto.",
+    "title": "Experiencia",
+    "items": [
+      {
+        "role": "Monitor de Programación",
+        "entity": "Universidad Nacional de Colombia",
+        "period": "Abr – Ago 2024",
+        "location": "",
+        "points": [
+          "Guié a estudiantes en conceptos fundamentales de programación: técnicas de debugging, diseño de algoritmos y descomposición de problemas",
+          "Gestioné la logística de sesiones y el seguimiento académico para apoyar un aprendizaje estructurado y orientado a resultados"
+        ]
+      },
+      {
+        "role": "Desarrollador Frontend",
+        "entity": "Sitlen",
+        "period": "May 2024 – Oct 2025",
+        "location": "Bogotá D.C., Colombia",
+        "points": [
+          "Desarrollé e implementé componentes UI responsivos con React, TypeScript y Tailwind CSS; coordiné trabajo multifuncional mediante JIRA y Git Flow",
+          "Apliqué buenas prácticas SEO y optimizaciones de rendimiento — code splitting y lazy loading — mejorando métricas clave del producto",
+          "Establecí patrones de diseño atómico en el código base, reduciendo duplicación y acelerando la entrega de funcionalidades"
+        ]
+      },
+      {
+        "role": "Mantenimiento Web",
+        "entity": "LAB1O1",
+        "period": "Dic 2025",
+        "location": "",
+        "points": [
+          "Realicé mantenimiento y actualización de contenido en el sitio oficial de la IUB, resolviendo inconsistencias de layout y problemas de compatibilidad",
+          "Elaboré un manual de uso del CMS que permite al personal no técnico gestionar contenido de forma autónoma"
+        ]
+      }
+    ],
     "certifications": {
       "title": "Certificaciones",
       "devcamp": {
@@ -99,7 +132,7 @@
     "methodologies": "Metodologías",
     "otherSkills": "Otras Skills",
     "design": "Diseño/UI",
-    "orchestrators": "Orquestadores de Agentes & Workflow",
+    "orchestrators": "Orquestadores",
     "softSkills": "Soft Skills",
     "softSkillsList": ["Trabajo en equipo", "Liderazgo", "Comunicación efectiva", "Resolución de problemas"],
     "languages": {
