@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { scrollToSection } from '../../utils/scrollTo';
 
 interface NavItem {
   id: string;
@@ -12,14 +13,6 @@ interface MobileNavLinksProps {
   navItems: NavItem[];
   activeNav: string;
   setIsMenuOpen: (open: boolean) => void;
-}
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
 }
 
 const MobileNavLinks: React.FC<MobileNavLinksProps> = ({ navItems, activeNav, setIsMenuOpen }) => {

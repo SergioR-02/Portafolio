@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { scrollToSection } from '../../utils/scrollTo';
 
 interface NavLinkProps {
   id: string;
@@ -8,14 +9,6 @@ interface NavLinkProps {
   to?: string;
   activeNav: string;
   onClose?: () => void;
-}
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ id, label, anchor, to, activeNav, onClose }) => {

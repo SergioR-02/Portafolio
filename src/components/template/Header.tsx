@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useHeaderLogic } from '../../hooks/useHeaderLogic';
 import { PillNav, type PillNavItem } from '../ui/futuristic-nav';
+import { scrollToSection } from '../../utils/scrollTo';
 
 const ICON_SIZE = 18;
 
@@ -15,14 +16,6 @@ const NAV_ICONS: Record<string, React.ReactNode> = {
   skills:     <Cpu        size={ICON_SIZE} />,
   contact:    <Mail       size={ICON_SIZE} />,
 };
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-}
 
 const Header: React.FC = () => {
   const { isScrolled, activeNav, theme, toggleTheme, navItems } = useHeaderLogic();

@@ -4,14 +4,7 @@ import { useScrollAnimation } from '../../contexts/useScrollAnimation';
 import { useTheme } from '../../contexts/ThemeContext';
 import GLSLHills from '../ui/glsl-hills';
 import ScrollDownIndicator from '../atoms/ScrollDownIndicator';
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-}
+import { scrollToSection } from '../../utils/scrollTo';
 
 const HeroSection: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();

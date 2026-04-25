@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { scrollToSection } from '../../utils/scrollTo';
 
 interface FooterLink {
   title: string;
@@ -15,14 +16,6 @@ interface FooterLink {
 interface FooterSection {
   label: string;
   links: FooterLink[];
-}
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
 }
 
 export function FooterSection() {

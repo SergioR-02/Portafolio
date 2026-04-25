@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { Sun, Moon } from 'lucide-react';
 
@@ -31,16 +31,25 @@ export function PillNav({
 }: PillNavProps) {
   const isDark = theme === 'dark';
 
-  // Text colours for the transparent (hero) state adapt to the page theme
-  const ghostActive   = isDark ? 'text-white' : 'text-gray-900';
-  const ghostInactive = isDark
-    ? 'text-white/55 hover:text-white/90'
-    : 'text-gray-500 hover:text-gray-900';
-  const ghostControl  = isDark
-    ? 'text-white/55 hover:text-white hover:bg-white/[0.1]'
-    : 'text-gray-500 hover:text-gray-900 hover:bg-gray-900/[0.06]';
-  const ghostDivider  = isDark ? 'bg-white/25' : 'bg-gray-400/30';
+  const ghostActive    = isDark ? 'text-white' : 'text-gray-900';
+  const ghostInactive  = isDark ? 'text-white/55 hover:text-white/90' : 'text-gray-500 hover:text-gray-900';
+  const ghostControl   = isDark ? 'text-white/55 hover:text-white hover:bg-white/[0.1]' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-900/[0.06]';
+  const ghostDivider   = isDark ? 'bg-white/25' : 'bg-gray-400/30';
   const ghostIndicator = isDark ? 'bg-white/[0.13]' : 'bg-gray-900/[0.07]';
+
+  // Single persistent indicator that slides between buttons
+  const navRef  = useRef<HTMLDivElement>(null);
+  const btnRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
+  const [indicator, setIndicator] = useState<{ left: number; width: number } | null>(null);
+
+  useLayoutEffect(() => {
+    const container = navRef.current;
+    const btn       = btnRefs.current.get(activeId);
+    if (!container || !btn) return;
+    const cRect = container.getBoundingClientRect();
+    const bRect = btn.getBoundingClientRect();
+    setIndicator({ left: bRect.left - cRect.left, width: bRect.width });
+  }, [activeId, items]);
 
   return (
     <motion.div
@@ -58,15 +67,30 @@ export function PillNav({
         ].join(' ')}
       >
         {/* Nav items */}
-        <div className="flex items-center gap-0.5 px-2 py-1.5">
+        <div ref={navRef} className="relative flex items-center gap-0.5 px-2 py-1.5">
+
+          {/* One persistent pill that slides — no mount/unmount jank */}
+          {indicator && (
+            <motion.div
+              className={`absolute inset-y-1.5 rounded-full pointer-events-none ${ghostIndicator}`}
+              initial={false}
+              animate={{ left: indicator.left, width: indicator.width }}
+              transition={{ type: 'spring', stiffness: 480, damping: 38, mass: 0.7 }}
+            />
+          )}
+
           {items.map((item) => {
             const isActive = activeId === item.id;
             return (
               <button
                 key={item.id}
+                ref={(el) => {
+                  if (el) btnRefs.current.set(item.id, el);
+                  else btnRefs.current.delete(item.id);
+                }}
                 onClick={() => onItemClick(item.id)}
                 className={[
-                  'relative flex items-center justify-center rounded-full select-none',
+                  'relative flex items-center justify-center rounded-full select-none z-10',
                   'px-3.5 py-1.5 text-sm font-medium transition-colors duration-200',
                   isActive
                     ? isScrolled ? 'text-gray-900 dark:text-white' : ghostActive
@@ -75,21 +99,8 @@ export function PillNav({
                       : ghostInactive,
                 ].join(' ')}
               >
-                {isActive && (
-                  <motion.div
-                    layoutId="active-pill-bg"
-                    className={`absolute inset-0 rounded-full ${ghostIndicator}`}
-                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                  />
-                )}
-                {/* Desktop: label */}
-                <span className="hidden md:inline relative z-10 whitespace-nowrap">
-                  {item.label}
-                </span>
-                {/* Mobile: icon */}
-                <span className="md:hidden relative z-10">
-                  {item.icon}
-                </span>
+                <span className="hidden md:inline whitespace-nowrap">{item.label}</span>
+                <span className="md:hidden">{item.icon}</span>
               </button>
             );
           })}

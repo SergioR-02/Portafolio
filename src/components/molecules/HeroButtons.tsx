@@ -1,14 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from '../atoms/Button';
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-}
+import { scrollToSection } from '../../utils/scrollTo';
 
 const HeroButtons: React.FC = () => {
   const { t } = useTranslation();

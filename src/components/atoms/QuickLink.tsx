@@ -1,18 +1,11 @@
 import React from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { scrollToSection } from '../../utils/scrollTo';
 
 interface QuickLinkProps {
   label: string;
   anchor?: string;
   to?: string;
-}
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
 }
 
 const QuickLink: React.FC<QuickLinkProps> = ({ label, anchor, to }) => {
