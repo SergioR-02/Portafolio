@@ -57,7 +57,7 @@ export function FooterSection() {
 
   function renderLink(link: FooterLink) {
     const linkClass =
-      'hover:text-white inline-flex items-center gap-1.5 transition-all duration-300';
+      'text-[11px] font-medium text-gray-500 hover:text-white inline-flex items-center gap-2 transition-colors duration-200';
 
     if (link.anchor) {
       return (
@@ -94,20 +94,20 @@ export function FooterSection() {
   }
 
   return (
-    <footer className="relative w-full bg-gray-900 dark:bg-black text-white border-t border-gray-800 dark:border-gray-700">
-      <div className="absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-px rounded-full bg-indigo-500/50 blur-sm" />
+    <footer className="relative w-full bg-gray-950 dark:bg-black text-white border-t border-gray-800 dark:border-gray-800">
+      <div className="absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-px bg-gray-700" />
 
       <div className="max-w-6xl mx-auto px-6 py-12 lg:py-16">
         <div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-12">
 
           <AnimatedContainer className="space-y-4">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <h3 className="text-xl font-extrabold italic uppercase tracking-tight text-white">
               {t('footer.brand')}
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-500 text-[11px] leading-relaxed max-w-xs">
               {t('footer.description')}
             </p>
-            <p className="text-gray-500 text-xs pt-2">
+            <p className="text-gray-600 text-[10px] font-bold uppercase tracking-[0.25em] pt-2">
               © {new Date().getFullYear()} {t('footer.copyright')}
             </p>
           </AnimatedContainer>
@@ -115,10 +115,10 @@ export function FooterSection() {
           <div className="mt-6 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             {footerLinks.map((section, index) => (
               <AnimatedContainer key={section.label} delay={0.15 + index * 0.1}>
-                <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-300 mb-4">
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.35em] text-gray-500 mb-5">
                   {section.label}
                 </h4>
-                <ul className="text-gray-400 space-y-2.5 text-sm">
+                <ul className="text-gray-400 space-y-3">
                   {section.links.map((link) => (
                     <li key={link.title}>{renderLink(link)}</li>
                   ))}

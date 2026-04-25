@@ -1,60 +1,99 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SkillIcon from '../atoms/SkillIcon';
-import { FaNodeJs, FaPython, FaDocker, FaGitAlt, FaGithub, FaBitbucket, FaCode } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiSass, SiMysql, SiMongodb, SiDjango, SiExpress, SiGithubactions, SiJavascript } from 'react-icons/si';
+import { Code2 } from 'lucide-react';
+import { FaNodeJs, FaPython, FaDocker, FaGitAlt, FaGithub, FaBitbucket } from 'react-icons/fa';
+import {
+  SiTypescript, SiNextdotjs, SiTailwindcss, SiSass,
+  SiMysql, SiMongodb, SiDjango, SiExpress,
+  SiGithubactions, SiJavascript, SiReact,
+} from 'react-icons/si';
+import type { IconType } from 'react-icons';
+
+type TechItem = { label: string; icon: IconType };
+
+const ICON_CLASS = 'w-4 h-4 text-gray-500 dark:text-gray-400 shrink-0';
 
 const SkillsGrid: React.FC = () => {
   const { t } = useTranslation();
 
+  const rows: { key: string; label: string; items: TechItem[] }[] = [
+    {
+      key: 'frontend',
+      label: t('skills.frontend'),
+      items: [
+        { label: 'JavaScript', icon: SiJavascript },
+        { label: 'TypeScript', icon: SiTypescript },
+        { label: 'React', icon: SiReact },
+        { label: 'Next.js', icon: SiNextdotjs },
+        { label: 'Tailwind CSS', icon: SiTailwindcss },
+        { label: 'Sass', icon: SiSass },
+      ],
+    },
+    {
+      key: 'backend',
+      label: t('skills.backend'),
+      items: [
+        { label: 'Node.js', icon: FaNodeJs },
+        { label: 'Express', icon: SiExpress },
+        { label: 'Python', icon: FaPython },
+        { label: 'Django', icon: SiDjango },
+      ],
+    },
+    {
+      key: 'databases',
+      label: t('skills.databases'),
+      items: [
+        { label: 'MySQL', icon: SiMysql },
+        { label: 'MongoDB', icon: SiMongodb },
+      ],
+    },
+    {
+      key: 'devops',
+      label: t('skills.devops'),
+      items: [
+        { label: 'Docker', icon: FaDocker },
+        { label: 'GitHub Actions', icon: SiGithubactions },
+      ],
+    },
+    {
+      key: 'versionControl',
+      label: t('skills.versionControl'),
+      items: [
+        { label: 'Git', icon: FaGitAlt },
+        { label: 'GitHub', icon: FaGithub },
+        { label: 'Bitbucket', icon: FaBitbucket },
+      ],
+    },
+  ];
+
   return (
     <div className="mb-16">
-      <div className="flex items-center justify-start mb-8">
-        <FaCode className="w-7 h-7 text-indigo-600 dark:text-indigo-400 mr-3" />
-        <h2 className="text-3xl md:text-3xl font-bold text-gray-900 dark:text-white">{t('skills.techTitle')}</h2>
+      <div className="flex items-center gap-3 mb-8">
+        <Code2 className="w-5 h-5 text-gray-400 dark:text-gray-500" />
+        <h2 className="text-2xl font-extrabold italic uppercase tracking-tight text-gray-900 dark:text-white">
+          {t('skills.techTitle')}
+        </h2>
       </div>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-indigo-400 dark:hover:border-indigo-400 hover:shadow-xl">
-          <h3 className="text-xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">{t('skills.backend')}</h3>
-          <div className="flex flex-wrap gap-4">
-            <SkillIcon label="TypeScript" icon={<SiTypescript className="text-blue-700" />} />
-            <SkillIcon label="NodeJS" icon={<FaNodeJs className="text-green-600" />} />
-            <SkillIcon label="Express" icon={<SiExpress className="text-gray-700" />} />
-            <SkillIcon label="Python" icon={<FaPython className="text-yellow-700" />} />
-            <SkillIcon label="Django" icon={<SiDjango className="text-green-900" />} />
+
+      <div className="divide-y-2 divide-gray-200 dark:divide-gray-700">
+        {rows.map(({ key, label, items }) => (
+          <div key={key} className="grid grid-cols-[170px_1fr] gap-6 py-5 items-start">
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-600 dark:text-gray-400 pt-0.5 leading-tight break-words">
+              {label}
+            </span>
+            <div className="flex flex-wrap gap-x-7 gap-y-3">
+              {items.map(({ label: techLabel, icon: Icon }) => (
+                <span
+                  key={techLabel}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                  <Icon className={ICON_CLASS} />
+                  {techLabel}
+                </span>
+              ))}
+            </div>
           </div>
-          <h3 className="text-xl font-bold text-indigo-600 dark:text-indigo-400 mt-8 mb-4">{t('skills.databases')}</h3>
-          <div className="flex flex-wrap gap-4">
-            <SkillIcon label="MySQL" icon={<SiMysql className="text-blue-600" />} />
-            <SkillIcon label="MongoDB" icon={<SiMongodb className="text-green-700" />} />
-          </div>
-          <h3 className="text-xl font-bold text-indigo-600 dark:text-indigo-400 mt-8 mb-4">{t('skills.devops')}</h3>
-          <div className="flex flex-wrap gap-4">
-            <SkillIcon label="Docker" icon={<FaDocker className="text-blue-500" />} />
-            <SkillIcon label="GitHub Actions" icon={<SiGithubactions className="text-gray-900" />} />
-            <SkillIcon label="AWS" icon={<span className="text-lg">☁️</span>} />
-          </div>
-        </div>
-        <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-indigo-400 dark:hover:border-indigo-400 hover:shadow-xl">
-          <h3 className="text-xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">{t('skills.frontend')}</h3>
-          <div className="flex flex-wrap gap-4">
-            <SkillIcon label="JavaScript" icon={<SiJavascript className="text-yellow-400" />} />
-            <SkillIcon label="Next.js" icon={<SiNextdotjs className="text-black dark:text-white" />} />
-            <SkillIcon label="React" icon={<FaNodeJs className="text-blue-500" />} />
-            <SkillIcon label="Tailwind CSS" icon={<SiTailwindcss className="text-teal-400" />} />
-            <SkillIcon label="Sass" icon={<SiSass className="text-pink-400" />} />
-          </div>
-          <h3 className="text-xl font-bold text-indigo-600 dark:text-indigo-400 mt-8 mb-4">{t('skills.versionControl')}</h3>
-          <div className="flex flex-wrap gap-4">
-            <SkillIcon label="Git" icon={<FaGitAlt className="text-orange-600" />} />
-            <SkillIcon label="GitHub" icon={<FaGithub className="text-gray-900 dark:text-white" />} />
-            <SkillIcon label="Bitbucket" icon={<FaBitbucket className="text-blue-700" />} />
-          </div>
-          <h3 className="text-xl font-bold text-indigo-600 dark:text-indigo-400 mt-8 mb-4">{t('skills.methodologies')}</h3>
-          <div className="flex flex-wrap gap-4">
-            <SkillIcon label="Agile (Scrum)" icon={<span className="text-lg">🌀</span>} />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

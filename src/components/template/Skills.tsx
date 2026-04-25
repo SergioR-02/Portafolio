@@ -1,9 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Layers, Check, Workflow, GitBranch, Users2, Link2, Cpu, PenTool } from 'lucide-react';
 import {
-  FaLightbulb,
-  FaUsers,
-  FaCogs,
   FaNodeJs,
   FaPython,
   FaDocker,
@@ -25,7 +23,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
-import AcademicInfoCard from '../molecules/AcademicInfoCard';
 import SkillsGrid from '../organisms/SkillsGrid';
 import SkillCategoryCard from '../molecules/SkillCategoryCard';
 import LanguagesSection from '../organisms/LanguagesSection';
@@ -61,9 +58,10 @@ const allTech = [
   { label: 'GitHub', icon: <FaGithub className="text-gray-900 dark:text-white" /> },
   { label: 'GitHub Actions', icon: <SiGithubactions className="text-gray-900 dark:text-white" /> },
   { label: 'Figma', icon: <SiFigma className="text-pink-500" /> },
-  { label: 'AWS', icon: <SiAmazon className="text-amber-500" /> },
   { label: 'Sass', icon: <SiSass className="text-pink-500" /> },
 ];
+
+const IC = 'w-3.5 h-3.5 text-gray-500 dark:text-gray-400 shrink-0';
 
 const Skills: React.FC = () => {
   const { t } = useTranslation();
@@ -73,18 +71,27 @@ const Skills: React.FC = () => {
   const otherSkills = [
     {
       category: t('skills.design'),
-      icon: FaLightbulb,
-      skills: ['Figma', 'Adobe XD'],
+      skills: [
+        { label: 'Figma',    icon: <SiFigma    className={IC} /> },
+        { label: 'Adobe XD', icon: <PenTool    className={IC} /> },
+      ],
     },
     {
       category: t('skills.orchestrators'),
-      icon: FaCogs,
-      skills: ['n8n', 'LangGraph', 'CrewAI', 'LangChain', 'MCPs'],
+      skills: [
+        { label: 'n8n',        icon: <Workflow   className={IC} /> },
+        { label: 'LangGraph',  icon: <GitBranch  className={IC} /> },
+        { label: 'CrewAI',     icon: <Users2     className={IC} /> },
+        { label: 'LangChain',  icon: <Link2      className={IC} /> },
+        { label: 'MCPs',       icon: <Cpu        className={IC} /> },
+      ],
     },
     {
       category: t('skills.softSkills'),
-      icon: FaUsers,
-      skills: softSkillsList,
+      skills: softSkillsList.map(skill => ({
+        label: skill,
+        icon: <Check className={IC} />,
+      })),
     },
   ];
 
@@ -92,10 +99,9 @@ const Skills: React.FC = () => {
     <section id="skills" className="py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 mt-10">
-            {t('skills.title')}
+          <h2 className="text-4xl font-bold uppercase tracking-[0.35em] text-gray-900 dark:text-gray-300 mb-3 mt-10">
+            {t('nav.skills')}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-8"></div>
         </div>
         <BlurFade delay={100} className="mb-16 block w-full -mx-2 sm:-mx-4 lg:-mx-8">
           <div>
@@ -113,20 +119,20 @@ const Skills: React.FC = () => {
             </div>
           </div>
         </BlurFade>
-        <AcademicInfoCard />
         <SkillsGrid />
         <div className="mb-8">
-          <div className="flex items-center mb-8">
-            <FaLightbulb className="w-8 h-8 text-purple-600 mr-3" />
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{t('skills.otherSkills')}</h2>
+          <div className="flex items-center gap-3 mb-4">
+            <Layers className="w-5 h-5 text-gray-400 dark:text-gray-500" />
+            <h2 className="text-2xl font-extrabold italic uppercase tracking-tight text-gray-900 dark:text-white">
+              {t('skills.otherSkills')}
+            </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {otherSkills.map((category, index) => (
+          <div className="divide-y-2 divide-gray-200 dark:divide-gray-700">
+            {otherSkills.map((cat, index) => (
               <SkillCategoryCard
                 key={index}
-                icon={category.icon}
-                category={category.category}
-                skills={category.skills}
+                category={cat.category}
+                skills={cat.skills}
               />
             ))}
           </div>
