@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Inicio",
+    "about": "Sobre mí",
     "experience": "Experiencia",
     "projects": "Proyectos",
     "skills": "Habilidades",
@@ -8,14 +9,15 @@
   },
   "hero": {
     "greeting": "Hola, soy",
-    "name": "Sergio!",
+    "name": "Sergio Ruiz",
+    "name": "Sergio Ruiz",
     "typingTexts": [
       "Desarrollador Full Stack",
       "Creador de Experiencias Web",
       "Especialista en React",
       "Innovador Digital"
     ],
-    "bio": "Estudiante de Ingeniería de Sistemas y <b>Desarrollador Full Stack</b> con experiencia en <b>React</b> y <b>Express</b>. Apasionado por crear soluciones escalables y eficientes, especializado en <b>APIs REST</b>, metodologías ágiles como <b>Gitflow</b> y con sólidos conocimientos en patrones de diseño.",
+    "bio": "Estudiante de Ingeniería de Sistemas y <bold>Desarrollador Full Stack</bold> con experiencia en <bold>React</bold> y <bold>Express</bold>. Apasionado por crear soluciones escalables y eficientes, especializado en <bold>APIs REST</bold>, metodologías ágiles como <bold>Gitflow</bold> y con sólidos conocimientos en patrones de diseño.",
     "viewProjects": "Ver Proyectos",
     "downloadCV": "Descargar CV"
   },
@@ -125,7 +127,11 @@
     "brand": "Mi Portafolio",
     "description": "Desarrollador Full Stack apasionado por crear soluciones web innovadoras que combinan funcionalidad excepcional con diseño elegante.",
     "quickLinks": "Enlaces Rápidos",
-    "copyright": "Mi Portafolio. Sergio Ruiz"
+    "copyright": "Mi Portafolio. Sergio Ruiz",
+    "sections": {
+      "navigation": "Navegación",
+      "social": "Social"
+    }
   },
   "common": {
     "viewMore": "Ver más",

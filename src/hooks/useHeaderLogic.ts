@@ -1,61 +1,39 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
+import { useScrollSpy } from './useScrollSpy';
+
+const LANDING_SECTIONS = ['home', 'about', 'experience', 'projects', 'skills'];
 
 export function useHeaderLogic() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeNav, setActiveNav] = useState<string>('home');
   const { theme, toggleTheme, setTheme } = useTheme();
+  const { t } = useTranslation();
   const location = useLocation();
 
-  // Establecer el tema oscuro por defecto al montar
+  const isLandingPage = location.pathname === '/';
+  const scrollActive = useScrollSpy(LANDING_SECTIONS, isLandingPage);
+  const activeNav = isLandingPage ? scrollActive : location.pathname.slice(1);
+
   useEffect(() => {
-    if (theme !== 'dark') {
-      setTheme('dark');
-    }
+    if (theme !== 'dark') setTheme('dark');
   }, []);
 
-  // Sincroniza el nav activo con la ruta
   useEffect(() => {
-    if (location.pathname === '/') {
-      if (location.hash === '#experience' || window.location.hash === '#experience') {
-        setActiveNav('experience');
-      } else if (location.hash === '#skills' || window.location.hash === '#skills') {
-        setActiveNav('skills');
-      } else if (location.hash === '#contact' || window.location.hash === '#contact') {
-        setActiveNav('contact');
-      } else {
-        setActiveNav('home');
-      }
-    } else if (location.pathname === '/projects') {
-      setActiveNav('projects');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (location.pathname === '/skills') {
-      setActiveNav('skills');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (location.pathname === '/contact') {
-      setActiveNav('contact');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      setActiveNav('home');
-    }
-  }, [location.pathname, location.hash]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Inicio', to: '/' },
-    { id: 'experience', label: 'Experiencia', scroll: true },
-    { id: 'projects', label: 'Proyectos', to: '/projects' },
-    { id: 'skills', label: 'Habilidades', to: '/skills' },
-    { id: 'contact', label: 'Contacto', to: '/contact' }
+    { id: 'home', label: t('nav.home'), anchor: 'home' },
+    { id: 'about', label: t('nav.about'), anchor: 'about' },
+    { id: 'experience', label: t('nav.experience'), anchor: 'experience' },
+    { id: 'projects', label: t('nav.projects'), anchor: 'projects' },
+    { id: 'skills', label: t('nav.skills'), anchor: 'skills' },
+    { id: 'contact', label: t('nav.contact'), to: '/contact' },
   ];
 
   return {
@@ -63,10 +41,8 @@ export function useHeaderLogic() {
     setIsMenuOpen,
     isScrolled,
     activeNav,
-    setActiveNav,
     theme,
     toggleTheme,
-    setTheme,
     navItems,
   };
 }
