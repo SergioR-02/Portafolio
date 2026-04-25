@@ -1,14 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Zap } from 'lucide-react';
-import Title from '../atoms/Title';
+import { Award } from 'lucide-react';
 
 const CertificationsTitle: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <div className="flex items-center gap-2 mb-2">
-      <span className="text-2xl text-indigo-600 dark:text-indigo-400"><Zap /></span>
-      <Title level={2} className="text-3xl md:text-4xl">{t('experience.certifications.title')}</Title>
+    <div className="flex items-center gap-3 mb-6">
+      <Award className="w-5 h-5 text-gray-400 dark:text-gray-500" />
+      <h2 className="text-2xl font-extrabold italic uppercase tracking-tight text-gray-900 dark:text-white">
+        {t('experience.certifications.title')}
+      </h2>
     </div>
   );
 };

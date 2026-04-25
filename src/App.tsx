@@ -8,11 +8,12 @@ import StarsBackground from './components/organisms/StarsBackground';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // Below-fold sections — loaded only after the initial paint
-const Experience = lazy(() => import('./components/template/Experience'));
-const Projects   = lazy(() => import('./components/template/Projects'));
-const Skills     = lazy(() => import('./components/template/Skills'));
-const Contact    = lazy(() => import('./components/template/Contact'));
-const Footer     = lazy(() => import('./components/template/Footer'));
+const Experience     = lazy(() => import('./components/template/Experience'));
+const Projects       = lazy(() => import('./components/template/Projects'));
+const Skills         = lazy(() => import('./components/template/Skills'));
+const Contact        = lazy(() => import('./components/template/Contact'));
+const Footer         = lazy(() => import('./components/template/Footer'));
+const ProjectDetail  = lazy(() => import('./components/template/ProjectDetail'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -53,6 +54,7 @@ function App() {
                 </>
               } />
               <Route path="/contact" element={<Suspense fallback={<div className="min-h-screen" />}><Contact /></Suspense>} />
+              <Route path="/projects/:id" element={<Suspense fallback={<div className="min-h-screen" />}><ProjectDetail /></Suspense>} />
             </Routes>
           </main>
           <Suspense fallback={null}><Footer /></Suspense>
