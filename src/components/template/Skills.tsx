@@ -9,7 +9,6 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 import {
-  SiAmazon,
   SiDjango,
   SiExpress,
   SiFigma,
@@ -35,33 +34,31 @@ type SkillBadgeProps = {
 };
 
 const SkillBadge: React.FC<SkillBadgeProps> = ({ label, icon }) => (
-  <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/90 px-4 py-2 text-sm font-medium text-gray-800 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:border-gray-700 dark:bg-gray-900/85 dark:text-gray-100">
+  <span className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-gray-200 bg-white/90 px-4 py-2 text-sm font-medium text-gray-800 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:border-gray-700 dark:bg-gray-900/85 dark:text-gray-100">
     <span className="text-base">{icon}</span>
     {label}
   </span>
 );
 
 const allTech = [
-  { label: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> },
-  { label: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
-  { label: 'React', icon: <SiReact className="text-cyan-500" /> },
-  { label: 'Next.js', icon: <SiNextdotjs className="text-gray-900 dark:text-white" /> },
-  { label: 'Tailwind CSS', icon: <SiTailwindcss className="text-teal-400" /> },
-  { label: 'Node.js', icon: <FaNodeJs className="text-green-600" /> },
-  { label: 'Express', icon: <SiExpress className="text-gray-700 dark:text-gray-200" /> },
-  { label: 'Python', icon: <FaPython className="text-amber-500" /> },
-  { label: 'Django', icon: <SiDjango className="text-emerald-800" /> },
-  { label: 'MySQL', icon: <SiMysql className="text-sky-600" /> },
-  { label: 'MongoDB', icon: <SiMongodb className="text-green-600" /> },
-  { label: 'Docker', icon: <FaDocker className="text-sky-500" /> },
-  { label: 'Git', icon: <FaGitAlt className="text-orange-600" /> },
-  { label: 'GitHub', icon: <FaGithub className="text-gray-900 dark:text-white" /> },
-  { label: 'GitHub Actions', icon: <SiGithubactions className="text-gray-900 dark:text-white" /> },
-  { label: 'Figma', icon: <SiFigma className="text-pink-500" /> },
-  { label: 'Sass', icon: <SiSass className="text-pink-500" /> },
+  { label: 'TypeScript', icon: <SiTypescript className="text-blue-500 transition-colors duration-300 hover:text-blue-600 dark:text-blue-400" /> },
+  { label: 'JavaScript', icon: <SiJavascript className="text-yellow-400 transition-colors duration-300 hover:text-yellow-300 dark:text-yellow-300" /> },
+  { label: 'React', icon: <SiReact className="text-cyan-500 transition-colors duration-300 hover:text-cyan-400 dark:text-cyan-400" /> },
+  { label: 'Next.js', icon: <SiNextdotjs className="text-gray-900 transition-colors duration-300 hover:text-black dark:text-white dark:hover:text-gray-200" /> },
+  { label: 'Tailwind CSS', icon: <SiTailwindcss className="text-teal-400 transition-colors duration-300 hover:text-teal-300 dark:text-teal-300" /> },
+  { label: 'Node.js', icon: <FaNodeJs className="text-green-600 transition-colors duration-300 hover:text-green-500 dark:text-green-500" /> },
+  { label: 'Express', icon: <SiExpress className="text-gray-700 transition-colors duration-300 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white" /> },
+  { label: 'Python', icon: <FaPython className="text-amber-500 transition-colors duration-300 hover:text-amber-400 dark:text-amber-400" /> },
+  { label: 'Django', icon: <SiDjango className="text-emerald-800 transition-colors duration-300 hover:text-emerald-700 dark:text-emerald-500" /> },
+  { label: 'MySQL', icon: <SiMysql className="text-sky-600 transition-colors duration-300 hover:text-sky-500 dark:text-sky-500" /> },
+  { label: 'MongoDB', icon: <SiMongodb className="text-green-600 transition-colors duration-300 hover:text-green-500 dark:text-green-500" /> },
+  { label: 'Docker', icon: <FaDocker className="text-sky-500 transition-colors duration-300 hover:text-sky-400 dark:text-sky-400" /> },
+  { label: 'Git', icon: <FaGitAlt className="text-orange-600 transition-colors duration-300 hover:text-orange-500 dark:text-orange-500" /> },
+  { label: 'GitHub', icon: <FaGithub className="text-gray-900 transition-colors duration-300 hover:text-black dark:text-white dark:hover:text-gray-200" /> },
+  { label: 'GitHub Actions', icon: <SiGithubactions className="text-gray-900 transition-colors duration-300 hover:text-black dark:text-gray-300 dark:hover:text-white" /> },
+  { label: 'Figma', icon: <SiFigma className="text-pink-500 transition-colors duration-300 hover:text-pink-400 dark:text-pink-400" /> },
+  { label: 'Sass', icon: <SiSass className="text-pink-500 transition-colors duration-300 hover:text-pink-400 dark:text-pink-400" /> },
 ];
-
-const IC = 'w-3.5 h-3.5 text-gray-500 dark:text-gray-400 shrink-0';
 
 const Skills: React.FC = () => {
   const { t } = useTranslation();
@@ -72,31 +69,31 @@ const Skills: React.FC = () => {
     {
       category: t('skills.design'),
       skills: [
-        { label: 'Figma',    icon: <SiFigma    className={IC} /> },
-        { label: 'Adobe XD', icon: <PenTool    className={IC} /> },
+        { label: 'Figma',    icon: <SiFigma className="text-gray-500 transition-colors duration-300 group-hover:text-pink-500 dark:text-gray-400" /> },
+        { label: 'Adobe XD', icon: <PenTool className="text-gray-500 transition-colors duration-300 group-hover:text-fuchsia-500 dark:text-gray-400" /> },
       ],
     },
     {
       category: t('skills.orchestrators'),
       skills: [
-        { label: 'n8n',        icon: <Workflow   className={IC} /> },
-        { label: 'LangGraph',  icon: <GitBranch  className={IC} /> },
-        { label: 'CrewAI',     icon: <Users2     className={IC} /> },
-        { label: 'LangChain',  icon: <Link2      className={IC} /> },
-        { label: 'MCPs',       icon: <Cpu        className={IC} /> },
+        { label: 'n8n',        icon: <Workflow className="text-gray-500 transition-colors duration-300 group-hover:text-sky-600 dark:text-gray-400" /> },
+        { label: 'LangGraph',  icon: <GitBranch className="text-gray-500 transition-colors duration-300 group-hover:text-indigo-600 dark:text-gray-400" /> },
+        { label: 'CrewAI',     icon: <Users2 className="text-gray-500 transition-colors duration-300 group-hover:text-emerald-600 dark:text-gray-400" /> },
+        { label: 'LangChain',  icon: <Link2 className="text-gray-500 transition-colors duration-300 group-hover:text-teal-600 dark:text-gray-400" /> },
+        { label: 'MCPs',       icon: <Cpu className="text-gray-500 transition-colors duration-300 group-hover:text-orange-600 dark:text-gray-400" /> },
       ],
     },
     {
       category: t('skills.softSkills'),
       skills: softSkillsList.map(skill => ({
         label: skill,
-        icon: <Check className={IC} />,
+        icon: <Check className="text-gray-500 transition-colors duration-300 group-hover:text-emerald-600 dark:text-gray-400" />,
       })),
     },
   ];
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold uppercase tracking-[0.35em] text-gray-900 dark:text-gray-300 mb-3 mt-10">

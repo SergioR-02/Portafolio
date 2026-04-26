@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
   });
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-4xl font-bold uppercase tracking-[0.35em] text-gray-900 dark:text-gray-300 mb-3 mt-10">

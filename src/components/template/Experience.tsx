@@ -85,7 +85,7 @@ const Experience: React.FC = () => {
     <section
       id="experience"
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className={`py-24 transition-all duration-700 ease-out ${
+      className={`py-16 transition-all duration-700 ease-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >

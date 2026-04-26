@@ -37,7 +37,7 @@ const ProjectDetail: React.FC = () => {
   const index = String(meta.id).padStart(2, '0');
 
   return (
-    <section className="relative isolate min-h-screen py-24 overflow-hidden">
+    <section className="relative isolate min-h-screen py-20 overflow-hidden">
       <StarsBackground theme={theme} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -45,14 +45,14 @@ const ProjectDetail: React.FC = () => {
         {/* Back */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 mb-16 cursor-pointer"
+          className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 mb-12 cursor-pointer"
         >
           <ArrowLeft className="w-3 h-3" />
           {t('nav.projects')}
         </Link>
 
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-10">
           <p className="text-xs md:text-sm font-medium uppercase tracking-[0.42em] text-gray-300 dark:text-gray-600 mb-3">
             {index}
           </p>
@@ -61,7 +61,7 @@ const ProjectDetail: React.FC = () => {
           </h1>
 
           {/* Tech stack */}
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-5">
             {project.technologies.map((tech, i) => (
               <span
                 key={i}
@@ -73,7 +73,7 @@ const ProjectDetail: React.FC = () => {
           </div>
 
           {/* Action links */}
-          <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100 dark:border-gray-800">
+          <div className="flex items-center gap-6 mb-6 pb-6 border-b border-gray-100 dark:border-gray-800">
             {project.isDeployed && (
               <a
                 href={project.liveUrl}
@@ -107,7 +107,7 @@ const ProjectDetail: React.FC = () => {
         </div>
 
         {/* Description */}
-        <div className="mb-10 pb-10 border-b border-gray-100 dark:border-gray-800">
+        <div className="mb-8 pb-8 border-b border-gray-100 dark:border-gray-800">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-500 mb-4">
             {t('nav.about')}
           </p>
@@ -117,7 +117,7 @@ const ProjectDetail: React.FC = () => {
         </div>
 
         {/* Features */}
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-500 mb-5">
             {t('common.mainFeatures')}
           </p>
