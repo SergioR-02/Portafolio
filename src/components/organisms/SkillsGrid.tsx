@@ -9,9 +9,9 @@ import {
 } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 
-type TechItem = { label: string; icon: IconType };
+type TechItem = { label: string; icon: IconType; hoverClass: string };
 
-const ICON_CLASS = 'w-4 h-4 text-gray-500 dark:text-gray-400 shrink-0';
+const ICON_CLASS = 'w-4 h-4 text-gray-500 dark:text-gray-400 shrink-0 transition-colors duration-300';
 
 const SkillsGrid: React.FC = () => {
   const { t } = useTranslation();
@@ -21,47 +21,47 @@ const SkillsGrid: React.FC = () => {
       key: 'frontend',
       label: t('skills.frontend'),
       items: [
-        { label: 'JavaScript', icon: SiJavascript },
-        { label: 'TypeScript', icon: SiTypescript },
-        { label: 'React', icon: SiReact },
-        { label: 'Next.js', icon: SiNextdotjs },
-        { label: 'Tailwind CSS', icon: SiTailwindcss },
-        { label: 'Sass', icon: SiSass },
+        { label: 'JavaScript', icon: SiJavascript, hoverClass: 'group-hover:text-yellow-400' },
+        { label: 'TypeScript', icon: SiTypescript, hoverClass: 'group-hover:text-blue-500' },
+        { label: 'React', icon: SiReact, hoverClass: 'group-hover:text-cyan-500' },
+        { label: 'Next.js', icon: SiNextdotjs, hoverClass: 'group-hover:text-gray-900 dark:group-hover:text-white' },
+        { label: 'Tailwind CSS', icon: SiTailwindcss, hoverClass: 'group-hover:text-teal-400' },
+        { label: 'Sass', icon: SiSass, hoverClass: 'group-hover:text-pink-500' },
       ],
     },
     {
       key: 'backend',
       label: t('skills.backend'),
       items: [
-        { label: 'Node.js', icon: FaNodeJs },
-        { label: 'Express', icon: SiExpress },
-        { label: 'Python', icon: FaPython },
-        { label: 'Django', icon: SiDjango },
+        { label: 'Node.js', icon: FaNodeJs, hoverClass: 'group-hover:text-green-500' },
+        { label: 'Express', icon: SiExpress, hoverClass: 'group-hover:text-gray-900 dark:group-hover:text-white' },
+        { label: 'Python', icon: FaPython, hoverClass: 'group-hover:text-amber-500' },
+        { label: 'Django', icon: SiDjango, hoverClass: 'group-hover:text-emerald-700' },
       ],
     },
     {
       key: 'databases',
       label: t('skills.databases'),
       items: [
-        { label: 'MySQL', icon: SiMysql },
-        { label: 'MongoDB', icon: SiMongodb },
+        { label: 'MySQL', icon: SiMysql, hoverClass: 'group-hover:text-sky-500' },
+        { label: 'MongoDB', icon: SiMongodb, hoverClass: 'group-hover:text-green-600' },
       ],
     },
     {
       key: 'devops',
       label: t('skills.devops'),
       items: [
-        { label: 'Docker', icon: FaDocker },
-        { label: 'GitHub Actions', icon: SiGithubactions },
+        { label: 'Docker', icon: FaDocker, hoverClass: 'group-hover:text-sky-500' },
+        { label: 'GitHub Actions', icon: SiGithubactions, hoverClass: 'group-hover:text-gray-900 dark:group-hover:text-white' },
       ],
     },
     {
       key: 'versionControl',
       label: t('skills.versionControl'),
       items: [
-        { label: 'Git', icon: FaGitAlt },
-        { label: 'GitHub', icon: FaGithub },
-        { label: 'Bitbucket', icon: FaBitbucket },
+        { label: 'Git', icon: FaGitAlt, hoverClass: 'group-hover:text-orange-600' },
+        { label: 'GitHub', icon: FaGithub, hoverClass: 'group-hover:text-gray-900 dark:group-hover:text-white' },
+        { label: 'Bitbucket', icon: FaBitbucket, hoverClass: 'group-hover:text-blue-700' },
       ],
     },
   ];
@@ -82,12 +82,12 @@ const SkillsGrid: React.FC = () => {
               {label}
             </span>
             <div className="flex flex-wrap gap-x-7 gap-y-3">
-              {items.map(({ label: techLabel, icon: Icon }) => (
+              {items.map(({ label: techLabel, icon: Icon, hoverClass }) => (
                 <span
                   key={techLabel}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 dark:text-gray-300"
+                  className="group inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-gray-700 dark:text-gray-300"
                 >
-                  <Icon className={ICON_CLASS} />
+                  <Icon className={`${ICON_CLASS} ${hoverClass}`} />
                   {techLabel}
                 </span>
               ))}

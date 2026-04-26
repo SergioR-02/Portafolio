@@ -19,7 +19,7 @@ const SkillCategoryCard: React.FC<SkillCategoryCardProps> = ({ category, skills 
       {skills.map(({ label, icon }, idx) => (
         <span
           key={idx}
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 dark:text-gray-300"
+          className="group inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           {icon}
           {label}

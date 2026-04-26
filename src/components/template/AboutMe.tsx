@@ -11,7 +11,7 @@ const AboutMe: React.FC = () => {
     <section
       id="about"
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-20 transition-all duration-700 ease-out transform ${
+      className={`py-24 transition-all duration-700 ease-out transform ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
@@ -26,9 +26,6 @@ const AboutMe: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
               <span className="block italic font-light text-gray-400 dark:text-gray-400 text-3xl md:text-4xl">
                 {t('hero.greeting')}
-              </span>
-              <span className="block mt-2 font-extrabold">
-                {t('hero.name')}.
               </span>
             </h2>
             <p className="mt-6 text-base leading-relaxed text-gray-600 dark:text-gray-300">
