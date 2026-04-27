@@ -6,44 +6,24 @@ interface SocialIconsProps {
 }
 
 const icons = [
-  {
-    href: 'https://github.com/SergioR-02',
-    label: 'GitHub',
-    icon: Github,
-    hover: 'hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900',
-  },
-  {
-    href: 'https://www.linkedin.com/in/sergio-ruiz-75818a28b',
-    label: 'LinkedIn',
-    icon: Linkedin,
-    hover: 'hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900',
-  },
-  {
-    href: 'mailto:sergioruiz456@gmail.com',
-    label: 'Email',
-    icon: Mail,
-    hover: 'hover:bg-green-600 hover:text-white dark:hover:bg-green-400 dark:hover:text-gray-900',
-  },
-  {
-    href: 'https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing',
-    label: 'CV PDF',
-    icon: FileText,
-    hover: 'hover:bg-red-600 hover:text-white dark:hover:bg-red-400 dark:hover:text-gray-900',
-  },
+  { href: 'https://github.com/SergioR-02', label: 'GitHub', icon: Github },
+  { href: 'https://www.linkedin.com/in/sergio-ruiz-75818a28b', label: 'LinkedIn', icon: Linkedin },
+  { href: 'mailto:sergioruiz456@gmail.com', label: 'Email', icon: Mail },
+  { href: 'https://drive.google.com/file/d/1CGHsYLzFF-4TdbsIq5Pv1EjEnxPSAhhq/view?usp=drive_link', label: 'CV PDF', icon: FileText },
 ];
 
 const SocialIcons: React.FC<SocialIconsProps> = ({ className = '' }) => (
-  <div className={`flex items-center justify-center space-x-6 mb-6 ${className}`}>
-    {icons.map(({ href, label, icon: Icon, hover }, idx) => (
+  <div className={`flex items-center justify-center space-x-3 mb-6 ${className}`}>
+    {icons.map(({ href, label, icon: Icon }) => (
       <a
         key={label}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
-        className={`p-3 bg-gray-300 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full transform hover:scale-110 transition-all duration-300 ${hover}`}
+        className="p-2.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-all duration-200"
       >
-        <Icon size={24} />
+        <Icon size={20} />
       </a>
     ))}
   </div>

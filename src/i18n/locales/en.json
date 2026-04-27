@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi",
+    "name": "Sergio Ruiz",
+    "typingTexts": [
+      "Full Stack Developer",
+      "Web Experience Creator",
+      "React Specialist",
+      "Digital Innovator"
+    ],
+    "bio": "Systems Engineering student and <bold>Full Stack Developer</bold> with experience in <bold>React</bold> and <bold>Express</bold>. Passionate about creating scalable and efficient solutions, specialized in <bold>REST APIs</bold>, agile methodologies like <bold>Gitflow</bold>, and with solid knowledge in design patterns.",
+    "viewProjects": "View Projects",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "focusLabel": "Focus",
+    "focusText": "Software development with a systemic vision. I design frontend and backend architectures that support clean, scalable interfaces, prioritizing performance, code maintainability, and an excellent user experience."
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "role": "Programming Tutor",
+        "entity": "Universidad Nacional de Colombia",
+        "period": "Apr – Aug 2025",
+        "location": "",
+        "points": [
+          "Guided students through core programming concepts including debugging techniques, algorithm design, and problem decomposition",
+          "Managed session logistics and academic progress tracking to support structured, outcome-focused learning"
+        ]
+      },
+      {
+        "role": "Frontend Developer",
+        "entity": "Sitlen",
+        "period": "May 2024 – Oct 2025",
+        "location": "Bogotá D.C., Colombia",
+        "points": [
+          "Developed and shipped responsive UI features in React, TypeScript, and Tailwind CSS; coordinated cross-functional work via JIRA and Git Flow",
+          "Applied SEO best practices and performance optimizations — code splitting and lazy loading — improving key product metrics",
+          "Established atomic design patterns across the codebase, reducing duplication and accelerating feature delivery velocity"
+        ]
+      },
+      {
+        "role": "Web Maintenance",
+        "entity": "LAB1O1",
+        "period": "Dec 2025",
+        "location": "",
+        "points": [
+          "Performed maintenance and content updates on the official IUB institutional website, resolving layout inconsistencies and cross-browser compatibility issues",
+          "Authored a structured CMS usage manual enabling non-technical staff to manage content independently"
+        ]
+      }
+    ],
+    "certifications": {
+      "title": "Certifications",
+      "devcamp": {
+        "title": "Full Stack Web Development",
+        "date": "December 2024",
+        "description": "Comprehensive training in modern web development: use of Node.js and Express for the backend, React and Tailwind CSS for creating dynamic and responsive interfaces, implementation of design patterns, and management of relational and non-relational databases."
+      },
+      "oracle": {
+        "title": "ONE Front-end Program",
+        "date": "July 2024",
+        "description": "International certification in frontend development with Oracle and Alura. Training in React using hooks, React Router for navigation, integration of external libraries, responsive design, API consumption, and application of programming best practices."
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "A selection of projects that demonstrate my expertise in modern web development and innovative design.",
+    "items": [
+      {
+        "id": 1,
+        "title": "FindIt UNAL - Version 2 of Lost Objects",
+        "description": "Version 2 of Lost Objects at UNAL, with real-time chat, notifications, and end-to-end report management.",
+        "fullDescription": "A web solution for version 2 of Lost Objects at the National University of Colombia: reports, search, messaging, notifications, admin tools, and role-based control. It is organized with a SOFEA architecture to separate the frontend, services, and real-time layer while keeping the system scalable.",
+        "features": ["Reports and search", "Real-time chat", "Real-time notifications", "Admin dashboard", "SOFEA architecture"]
+      },
+      {
+        "id": 2,
+        "title": "DevCampus - Course Platform",
+        "description": "Modern online course platform with search, dynamic filters, and a complete admin panel built with Strapi.",
+        "fullDescription": "A modern online course platform built with React and Strapi CMS. Allows users to explore, view course syllabi, search courses by title, and dynamically filter by difficulty level. Includes responsive design, dark mode, and an admin panel for content management.",
+        "features": ["Advanced title search", "Dynamic level filters", "Responsive design", "Modern dark mode", "Rich Text rendering"]
+      },
+      {
+        "id": 3,
+        "title": "NutriVision AI - Nutritional Analysis",
+        "description": "Platform that uses AI to detect ingredients in food images and calculate nutritional information in real time.",
+        "fullDescription": "A web application that integrates Artificial Intelligence to analyze food images. The system uses Google Gemini to detect ingredients, OpenCV to process images and generate bounding boxes, and presents results with a complete nutritional analysis and interactive 3D visualization.",
+        "features": ["AI ingredient detection", "Bounding boxes on food", "Drag & drop image upload", "RESTful API with FastAPI", "Interactive 3D visualization"]
+      },
+      {
+        "id": 4,
+        "title": "UNAL Events - Event Management System",
+        "description": "Management and visualization of events at the National University of Colombia (React + Strapi).",
+        "fullDescription": "Web system for managing and visualizing events at the National University of Colombia. Frontend in React + TypeScript + Vite and backend with Strapi v5 as Headless CMS. Includes dynamic search, category filters, detailed views, responsive design, and light/dark mode. Dockerized and deployed on Vercel (frontend) and Strapi Cloud (backend).",
+        "features": ["Dynamic event listing and search", "Category filtering", "Detailed event views", "Rich Text rendering with @strapi/blocks-react-renderer", "Persistent light/dark mode", "Dockerization and cloud deployment"]
+      },
+      {
+        "id": 5,
+        "title": "UNAL Lost Objects",
+        "description": "Platform to manage lost and found objects at the National University, built with MVC architecture and Atomic Design.",
+        "fullDescription": "A complete web platform designed to efficiently manage the loss and recovery of objects on UNAL campuses. Uses MVC architecture on the backend with Express and TypeScript, and an Atomic design system on the frontend with React for maximum scalability and maintainability.",
+        "features": ["Secure JWT authentication", "Testing & Development", "Report creation and management", "MVC backend architecture", "Atomic frontend design"]
+      },
+      {
+        "id": 6,
+        "title": "EcoScan 3D - AI Recycling Analysis",
+        "description": "Platform that uses AI to identify and classify waste from images, offering recycling recommendations and interactive 3D visualizations.",
+        "fullDescription": "EcoScan 3D is an innovative web platform that educates about recycling. It allows users to analyze waste by uploading an image or using their camera in real time. The application combines object detection with YOLOv5, personalized tips generation with ChatGPT, and interactive 3D visualization with Three.js, creating an educational and engaging experience.",
+        "features": ["AI waste detection (YOLOv5)", "Interactive 3D visualization", "Recycling tips with ChatGPT", "Static image analysis", "Real-time detection (Camera)", "WebSocket communication"]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "academic": {
+      "title": "Academic Information",
+      "degree": "Systems and Computing Engineering",
+      "university": "National University of Colombia • 2022-2026",
+      "status": "In Progress"
+    },
+    "techTitle": "Languages & Technology",
+    "backend": "Backend",
+    "databases": "Databases",
+    "devops": "DevOps / CI/CD",
+    "frontend": "Frontend",
+    "versionControl": "Version Control",
+    "methodologies": "Methodologies",
+    "otherSkills": "Other Skills",
+    "design": "Design/UI",
+    "orchestrators": "Orchestrators",
+    "softSkills": "Soft Skills",
+    "softSkillsList": ["Teamwork", "Leadership", "Effective communication", "Problem-solving"],
+    "languages": {
+      "title": "Languages",
+      "spanish": "Spanish: Native",
+      "english": "English: Intermediate"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "connectWith": "Connect with me on professional networks",
+    "infoTitle": "Contact Information",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Bogotá, Colombia",
+    "whyTitle": "Why work with me?",
+    "reasons": [
+      "Clean and documented code",
+      "Adaptability to different environments and technologies",
+      "User experience focused",
+      "Constant updating on new technologies"
+    ]
+  },
+  "footer": {
+    "brand": "My Portfolio",
+    "description": "Full Stack developer passionate about creating innovative web solutions that combine exceptional functionality with elegant design.",
+    "quickLinks": "Quick Links",
+    "copyright": "My Portfolio. Sergio Ruiz",
+    "sections": {
+      "navigation": "Navigation",
+      "social": "Social"
+    }
+  },
+  "common": {
+    "viewMore": "View more",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "usedTechnologies": "Technologies Used",
+    "mainFeatures": "Main Features"
+  }
+}

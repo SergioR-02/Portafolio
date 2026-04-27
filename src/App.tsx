@@ -1,17 +1,48 @@
+import { useEffect, lazy, Suspense } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { useTheme } from './contexts/ThemeContext';
 import Header from './components/template/Header';
 import Hero from './components/template/Hero';
-import About from './components/template/Experience';
-import Projects from './components/template/Projects';
-import Skills from './components/template/Skills';
-import Contact from './components/template/Contact';
-import Footer from './components/template/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AboutMe from './components/template/AboutMe';   // above fold → eager
+import StarsBackground from './components/organisms/StarsBackground';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+
+// Below-fold sections — loaded only after the initial paint
+const Experience     = lazy(() => import('./components/template/Experience'));
+const Projects       = lazy(() => import('./components/template/Projects'));
+const Skills         = lazy(() => import('./components/template/Skills'));
+const Contact        = lazy(() => import('./components/template/Contact'));
+const Footer         = lazy(() => import('./components/template/Footer'));
+const ProjectDetail  = lazy(() => import('./components/template/ProjectDetail'));
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  }, [pathname]);
+  return null;
+}
+
+const LandingSections: React.FC = () => {
+  const { theme } = useTheme();
+  return (
+    <div className="relative overflow-hidden isolate">
+      <StarsBackground theme={theme} />
+      <AboutMe />
+      <Suspense fallback={<div className="h-96" />}>
+        <Experience />
+        <Projects />
+        <Skills />
+      </Suspense>
+    </div>
+  );
+};
 
 function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
           <Header />
           <main>
@@ -19,19 +50,18 @@ function App() {
               <Route path="/" element={
                 <>
                   <Hero />
-                  <About />
+                  <LandingSections />
                 </>
               } />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<Suspense fallback={<div className="min-h-screen" />}><Contact /></Suspense>} />
+              <Route path="/projects/:id" element={<Suspense fallback={<div className="min-h-screen" />}><ProjectDetail /></Suspense>} />
             </Routes>
           </main>
-          <Footer />
+          <Suspense fallback={null}><Footer /></Suspense>
         </div>
       </BrowserRouter>
     </ThemeProvider>
   );
 }
 
-export default App
+export default App;
