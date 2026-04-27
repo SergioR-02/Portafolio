@@ -1,4 +1,5 @@
-# Portafolio Personal - React + TypeScript con Arquitectura Atómica
+
+# Portafolio Personal — Sergio Ruiz
 
 [![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -6,162 +7,106 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![React Router](https://img.shields.io/badge/React_Router-7.8.2-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
 [![React Icons](https://img.shields.io/badge/React_Icons-5.5.0-E10098?style=for-the-badge&logo=react&logoColor=white)](https://react-icons.github.io/react-icons/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Lucide React](https://img.shields.io/badge/Lucide_React-0.344.0-FF6B6B?style=for-the-badge&logo=lucide&logoColor=white)](https://lucide.dev/)
-
-## Descripción del Proyecto
-
-**Portafolio personal moderno** construido con **React 18 + TypeScript** y **Arquitectura Atómica**. Una aplicación web completamente responsiva que presenta mis proyectos, habilidades y experiencia profesional con un diseño elegante y animaciones fluidas.
-
-### **Características Principales:**
-
-#### 🏗️ **Arquitectura & Features**
-![Atomic Design](https://img.shields.io/badge/Atomic_Design-Architecture-FF6B6B?style=flat-square&logo=react&logoColor=white)
-![Responsive](https://img.shields.io/badge/Responsive-Design-4ECDC4?style=flat-square&logo=css3&logoColor=white)
-![TypeScript](https://img.shields.io/badge/Type-Safe-96CEB4?style=flat-square&logo=typescript&logoColor=white)
-![Dark Mode](https://img.shields.io/badge/Dark_Mode-Toggle-2D3748?style=flat-square&logo=moon&logoColor=white)
-![PWA Ready](https://img.shields.io/badge/PWA-Ready-5A67D8?style=flat-square&logo=pwa&logoColor=white)
-
-- ✨ **Diseño Moderno y Responsivo** con animaciones CSS avanzadas
-- 🌙 **Modo Oscuro/Claro** con persistencia en localStorage
-- 🎨 **Arquitectura Atómica** (Atoms → Molecules → Organisms → Templates)
-- 🚀 **Navegación SPA** con React Router DOM
-- 📱 **Mobile-First Design** completamente responsivo
-- 🎭 **Animaciones Fluidas** con CSS transitions y transforms
-- 🔍 **SEO Optimizado** con meta tags dinámicos
-- ⚡ **Performance Optimizado** con Vite y lazy loading
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🏛️ **ARQUITECTURA ATÓMICA**
+## 📄 Hoja de Vida
 
-### 📁 Estructura del Proyecto
+[Ver Hoja de Vida (CV) en PDF](https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing)
+
+---
+
+## Descripción del Proyecto
+
+Portafolio personal moderno construido con **React 18 + TypeScript** y **Arquitectura Atómica**. Presenta proyectos, habilidades y experiencia profesional con diseño elegante, animaciones fluidas y enfoque mobile-first.
+
+
+### 🏗️ Características Principales
+
+- 🎨 Arquitectura Atómica (Atoms → Molecules → Organisms → Templates)
+- 🌙 Modo Oscuro/Claro con persistencia
+- ⚡ Performance optimizado (Vite, lazy loading, tree-shaking)
+- 📱 Mobile-First y diseño 100% responsivo
+- 🚀 Navegación SPA con React Router
+- 🧩 Animaciones fluidas y micro-interacciones
+- 🔍 SEO optimizado con meta tags dinámicos
+- 🛡️ TypeScript estricto y ESLint
+
+---
+
+src/
+
+## 🏛️ Arquitectura y Estructura
 
 ```
 src/
 ├── components/
-│   ├── atoms/           # Componentes más básicos
-│   ├── molecules/       # Combinación de átomos
-│   ├── organisms/       # Secciones complejas
-│   └── template/        # Páginas completas
-├── contexts/
-│   ├── ThemeContext.tsx
-│   └── useScrollAnimation.tsx
-├── hooks/
-│   └── useHeaderLogic.ts
-└── App.tsx
+│   ├── atoms/           # Elementos UI básicos (Button, TechTag, etc)
+│   ├── molecules/       # Combinaciones de átomos (ProjectCard, SkillCategoryCard, etc)
+│   ├── organisms/       # Secciones completas (ProjectsGrid, HeroSection, etc)
+│   ├── template/        # Páginas y layouts principales
+│   └── ui/              # Efectos visuales, layouts y helpers
+├── contexts/            # Contextos globales (Theme, Animaciones)
+├── data/                # Proyectos destacados y datos
+├── hooks/               # Custom hooks
+├── i18n/                # Internacionalización
+└── utils/               # Utilidades generales
 ```
 
-### 🔧 **Principios de Arquitectura Atómica Implementados:**
-
-#### **Atoms (Átomos)**
-Componentes más básicos e indivisibles del sistema:
-- `Button`: Botón reutilizable con variantes
-- `TechTag`: Etiquetas de tecnologías con iconos
-- `Title`: Títulos con diferentes niveles jerárquicos
-- `ThemeToggle`: Switch para modo oscuro/claro
-
-#### **Molecules (Moléculas)**
-Grupos de átomos funcionando juntos:
-- `ProjectCard`: Card de proyecto con imagen, descripción y tecnologías
-- `SkillCategoryCard`: Agrupación de habilidades por categoría
-- `ContactInfoList`: Lista de información de contacto
-
-#### **Organisms (Organismos)**
-Componentes complejos y reutilizables:
-- `ProjectsGrid`: Grid completo de proyectos
-- `HeroSection`: Sección hero con animaciones
-- `SkillsGrid`: Grid de habilidades organizadas
-
-#### **Templates (Plantillas)**
-Páginas completas que combinan organismos:
-- `Projects`: Página de proyectos con modal
-- `Skills`: Página de habilidades técnicas
-- `Contact`: Página de contacto e información
+### Principios Atómicos
+- **Átomos:** Button, TechTag, Title, ThemeToggle, etc.
+- **Moléculas:** ProjectCard, SkillCategoryCard, ContactInfoList, HeroButtons, etc.
+- **Organismos:** ProjectsGrid, HeroSection, SkillsGrid, ContactSection, etc.
+- **Templates:** Projects, Skills, Contact, AboutMe, etc.
 
 ---
 
-## 🛠️ **STACK TECNOLÓGICO**
 
-### **Frontend Core**
-- **React 18.3.1** - Biblioteca de interfaz de usuario
-- **TypeScript 5.5.3** - Tipado estático para JavaScript
-- **Vite 5.4.2** - Build tool y dev server ultrarrápido
+## 🛠️ Stack Tecnológico
 
-### **Routing & State**
-- **React Router DOM 7.8.2** - Enrutamiento SPA
-- **Context API** - Gestión de estado global (tema)
 
-### **Styling & UI**
-- **Tailwind CSS 3.4.1** - Framework CSS utility-first
-- **PostCSS** - Procesador CSS para plugins
-- **CSS Custom Properties** - Variables CSS nativas
-
-### **Icons & Assets**
-- **React Icons 5.5.0** - Librería de iconos (FA, SI, etc.)
-- **Lucide React 0.344.0** - Iconos modernos y customizables
-
-### **Development Tools**
-- **ESLint 9.9.1** - Linter para código consistente
-- **TypeScript ESLint** - Reglas específicas para TS
-- **Autoprefixer** - Prefijos CSS automáticos
+- **React 18.3.1**
+- **TypeScript 5.5.3**
+- **Vite 5.4.2**
+- **Tailwind CSS 3.4.1**
+- **React Router DOM 7.8.2**
+- **Lucide React & React Icons**
+- **ESLint, TypeScript ESLint, Autoprefixer**
 
 ---
 
-## 🌟 **CARACTERÍSTICAS AVANZADAS**
 
-### **🎨 Sistema de Temas**
-```typescript
-// Context para gestión del tema
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
-}
-```
+## 🌟 Características Avanzadas
 
-### **📱 Navegación Inteligente**
-- Navegación smooth scroll para secciones
-- Detección automática de sección activa
-- Menu móvil con animaciones
 
-### **🎭 Animaciones CSS Avanzadas**
-- Gradientes animados en el hero
-- Hover effects en cards de proyectos
-- Transiciones fluidas entre temas
-- Loading states y micro-interactions
+- Contexto de tema (oscuro/claro) global
+- Navegación con scroll inteligente y menú móvil animado
+- Animaciones avanzadas: gradientes, hover, transiciones y micro-interacciones
+- SEO y performance optimizados
 
 ---
 
-## 🗂️ **ESTRUCTURA DE FEATURES**
 
-### **🏠 Página Principal**
-- Hero section con animaciones
-- Información académica
-- Llamadas a la acción
+## 💼 Proyectos Destacados
 
-### **💼 Proyectos**
-- Grid responsivo de proyectos
-- Modal detallado para cada proyecto
-- Enlaces a demo y código fuente
-- Sistema de filtros por tecnología
+| Proyecto           | Rol                    | Tecnologías principales                        | Código / Demo                              |
+|--------------------|------------------------|-----------------------------------------------|--------------------------------------------|
+| FindIt             | Full Stack Developer   | React, TypeScript, Tailwind CSS, WebSockets   | [Repo](https://github.com/FindItUnal)      |
+| DevCampus          | Full Stack Developer   | React, TypeScript, Strapi, SQLite, Tailwind   | [Repo](https://github.com/SergioR-02/DevCampus) / [Demo](https://dev-campus-two.vercel.app) |
+| NutriVisionAI      | AI · Full Stack Dev    | React, Python, Tailwind CSS, FastAPI, OpenCV  | [Repo](https://github.com/SergioR-02/NutriVision) |
+| Eventos Unal       | Full Stack Developer   | React, TypeScript, Strapi, Docker             | [Repo](https://github.com/SergioR-02/Eventos_Unal) / [Demo](https://eventos-unal.vercel.app) |
+| Objetos Perdidos   | Full Stack Developer   | React, Node.js, MySQL, TypeScript, Express    | [Repo](https://github.com/SergioR-02/Software_Engineering/tree/main/Proyecto) / [Demo](https://test-bay-iota-63.vercel.app) |
+| EcoScan            | Frontend · Graphics Dev| Three.js, React, Python, Flask, WebSockets    | [Repo](https://github.com/SergioR-02/computacion-visual-grupo/tree/main/proyecto) |
 
-### **🛠️ Habilidades**
-- Categorización por tipo de tecnología
-- Iconos representativos
-- Niveles de experiencia
-- Skills frontend, backend y herramientas
-
-### **📞 Contacto**
-- Información de contacto profesional
-- Enlaces a redes sociales
-- Formulario de contacto (próximamente)
 
 ---
 
 
 
-## 📊 **MÉTRICAS DE RENDIMIENTO**
+
+## 📊 Métricas de Rendimiento
 
 ![Performance](https://img.shields.io/badge/Performance-Optimized-success?style=flat-square&logo=lighthouse&logoColor=white)
 ![Bundle Size](https://img.shields.io/badge/Bundle_Size-<200KB-blue?style=flat-square&logo=webpack&logoColor=white)
@@ -174,7 +119,8 @@ interface ThemeContextType {
 
 ---
 
-## 🌐 **DESPLIEGUE EN PRODUCCIÓN**
+
+## 🌐 Despliegue en Producción
 
 ![Production](https://img.shields.io/badge/Status-Production_Ready-success?style=flat-square&logo=vercel&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Platform-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
@@ -182,7 +128,8 @@ interface ThemeContextType {
 ### 🚀 **Ver Demo en Vivo**
 [![Demo](https://img.shields.io/badge/Demo-Live_Preview-brightgreen?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-lovat-eight.vercel.app)
 
-**🔗 URL de Producción**: [`https://portafolio-lovat-eight.vercel.app`](https://portafolio-lovat-eight.vercel.app)
+
+🔗 **URL de Producción:** [`https://portafolio-lovat-eight.vercel.app`](https://portafolio-lovat-eight.vercel.app)
 
 ### 🏗️ **Configuración de Despliegue**
 
@@ -192,7 +139,8 @@ interface ThemeContextType {
 
 ---
 
-## 🤝 **CONTRIBUCIÓN**
+
+## 🤝 Contribución
 
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square&logo=github&logoColor=white)
 
@@ -204,15 +152,18 @@ interface ThemeContextType {
 
 ---
 
-## 📞 **CONTACTO**
+
+## 📞 Contacto
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sergio_Ruiz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sergio-ruiz-75818a28b/)
 [![GitHub](https://img.shields.io/badge/GitHub-SergioR--02-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SergioR-02)
 [![Email](https://img.shields.io/badge/Email-sergioruiz456@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sergioruiz456@gmail.com)
+[![CV](https://img.shields.io/badge/Hoja_de_Vida-PDF-blue?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing)
 
 ---
 
-## 🙏 **AGRADECIMIENTOS**
+
+## 🙏 Agradecimientos
 
 - **React Team** por la increíble biblioteca
 - **Tailwind CSS** por el framework de estilos
