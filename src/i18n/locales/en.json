@@ -28,9 +28,9 @@
     "title": "Experience",
     "items": [
       {
-        "role": "Teaching Assistant · Programming",
+        "role": "Programming Tutor",
         "entity": "Universidad Nacional de Colombia",
-        "period": "Apr – Aug 2024",
+        "period": "Apr – Aug 2025",
         "location": "",
         "points": [
           "Guided students through core programming concepts including debugging techniques, algorithm design, and problem decomposition",
@@ -79,34 +79,41 @@
     "items": [
       {
         "id": 1,
+        "title": "FindIt UNAL - Version 2 of Lost Objects",
+        "description": "Version 2 of Lost Objects at UNAL, with real-time chat, notifications, and end-to-end report management.",
+        "fullDescription": "A web solution for version 2 of Lost Objects at the National University of Colombia: reports, search, messaging, notifications, admin tools, and role-based control. It is organized with a SOFEA architecture to separate the frontend, services, and real-time layer while keeping the system scalable.",
+        "features": ["Reports and search", "Real-time chat", "Real-time notifications", "Admin dashboard", "SOFEA architecture"]
+      },
+      {
+        "id": 2,
         "title": "DevCampus - Course Platform",
         "description": "Modern online course platform with search, dynamic filters, and a complete admin panel built with Strapi.",
         "fullDescription": "A modern online course platform built with React and Strapi CMS. Allows users to explore, view course syllabi, search courses by title, and dynamically filter by difficulty level. Includes responsive design, dark mode, and an admin panel for content management.",
         "features": ["Advanced title search", "Dynamic level filters", "Responsive design", "Modern dark mode", "Rich Text rendering"]
       },
       {
-        "id": 2,
+        "id": 3,
         "title": "NutriVision AI - Nutritional Analysis",
         "description": "Platform that uses AI to detect ingredients in food images and calculate nutritional information in real time.",
         "fullDescription": "A web application that integrates Artificial Intelligence to analyze food images. The system uses Google Gemini to detect ingredients, OpenCV to process images and generate bounding boxes, and presents results with a complete nutritional analysis and interactive 3D visualization.",
         "features": ["AI ingredient detection", "Bounding boxes on food", "Drag & drop image upload", "RESTful API with FastAPI", "Interactive 3D visualization"]
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "UNAL Events - Event Management System",
         "description": "Management and visualization of events at the National University of Colombia (React + Strapi).",
         "fullDescription": "Web system for managing and visualizing events at the National University of Colombia. Frontend in React + TypeScript + Vite and backend with Strapi v5 as Headless CMS. Includes dynamic search, category filters, detailed views, responsive design, and light/dark mode. Dockerized and deployed on Vercel (frontend) and Strapi Cloud (backend).",
         "features": ["Dynamic event listing and search", "Category filtering", "Detailed event views", "Rich Text rendering with @strapi/blocks-react-renderer", "Persistent light/dark mode", "Dockerization and cloud deployment"]
       },
       {
-        "id": 4,
+        "id": 5,
         "title": "UNAL Lost Objects",
         "description": "Platform to manage lost and found objects at the National University, built with MVC architecture and Atomic Design.",
         "fullDescription": "A complete web platform designed to efficiently manage the loss and recovery of objects on UNAL campuses. Uses MVC architecture on the backend with Express and TypeScript, and an Atomic design system on the frontend with React for maximum scalability and maintainability.",
         "features": ["Secure JWT authentication", "Testing & Development", "Report creation and management", "MVC backend architecture", "Atomic frontend design"]
       },
       {
-        "id": 5,
+        "id": 6,
         "title": "EcoScan 3D - AI Recycling Analysis",
         "description": "Platform that uses AI to identify and classify waste from images, offering recycling recommendations and interactive 3D visualizations.",
         "fullDescription": "EcoScan 3D is an innovative web platform that educates about recycling. It allows users to analyze waste by uploading an image or using their camera in real time. The application combines object detection with YOLOv5, personalized tips generation with ChatGPT, and interactive 3D visualization with Three.js, creating an educational and engaging experience.",

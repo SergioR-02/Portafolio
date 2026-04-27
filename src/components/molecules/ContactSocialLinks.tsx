@@ -6,7 +6,7 @@ import { Github, Linkedin, FileText } from 'lucide-react';
 const links = [
   { href: 'https://github.com/SergioR-02', icon: Github, label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/sergio-ruiz-75818a28b', icon: Linkedin, label: 'LinkedIn' },
-  { href: 'https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing', icon: FileText, label: 'CV (PDF)' },
+  { href: 'https://drive.google.com/file/d/1CGHsYLzFF-4TdbsIq5Pv1EjEnxPSAhhq/view?usp=drive_link', icon: FileText, label: 'CV (PDF)' },
 ];
 
 const ContactSocialLinks: React.FC = () => {

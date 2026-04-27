@@ -2,6 +2,15 @@ export const PROJECT_META = [
   {
     id: 1,
     role: 'Full Stack Developer',
+    image: '/Findit.svg',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'WebSockets', 'Node.js'],
+    githubUrl: 'https://github.com/FindItUnal',
+    liveUrl: 'https://github.com/FindItUnal',
+    isDeployed: false,
+  },
+  {
+    id: 2,
+    role: 'Full Stack Developer',
     image: '/DevCampus.svg',
     technologies: ['React', 'TypeScript', 'Strapi', 'SQLite', 'Tailwind CSS'],
     githubUrl: 'https://github.com/SergioR-02/DevCampus',
@@ -9,7 +18,7 @@ export const PROJECT_META = [
     isDeployed: true,
   },
   {
-    id: 2,
+    id: 3,
     role: 'AI · Full Stack Developer',
     image: '/NutriVisionAI.svg',
     technologies: ['React', 'Python', 'Tailwind CSS', 'FastAPI', 'OpenCV'],
@@ -18,7 +27,7 @@ export const PROJECT_META = [
     isDeployed: false,
   },
   {
-    id: 3,
+    id: 4,
     role: 'Full Stack Developer',
     image: '/EventosUnal.svg',
     technologies: ['React', 'TypeScript', 'Strapi', 'Docker'],
@@ -27,7 +36,7 @@ export const PROJECT_META = [
     isDeployed: true,
   },
   {
-    id: 4,
+    id: 5,
     role: 'Full Stack Developer',
     image: '/ObjetosPerdidos.svg',
     technologies: ['React', 'Node.js', 'MySQL', 'TypeScript', 'Express'],
@@ -36,7 +45,7 @@ export const PROJECT_META = [
     isDeployed: true,
   },
   {
-    id: 5,
+    id: 6,
     role: 'Frontend · Graphics Developer',
     image: '/EcoScan.svg',
     technologies: ['Three.js', 'React', 'Python', 'Flask', 'WebSockets'],
