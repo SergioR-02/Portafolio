@@ -6,12 +6,12 @@ const LIGHT_BG = 'linear-gradient(to bottom, #ffffff 0%, #fcfcfd 55%, #f4f7fb 10
 const STAR_FIELD_HEIGHT = 4000;
 const STAR_FIELD_SPREAD = 8000;
 
-function generateStars(count: number, color: string): string {
+function generateStars(count: number): string {
   const shadows: string[] = [];
   for (let i = 0; i < count; i++) {
     const x = Math.floor(Math.random() * STAR_FIELD_SPREAD) - STAR_FIELD_SPREAD / 2;
     const y = Math.floor(Math.random() * STAR_FIELD_SPREAD) - STAR_FIELD_SPREAD / 2;
-    shadows.push(`${x}px ${y}px ${color}`);
+    shadows.push(`${x}px ${y}px currentColor`);
   }
   return shadows.join(', ');
 }
@@ -24,11 +24,8 @@ interface StarLayerProps {
 }
 
 const StarLayer: React.FC<StarLayerProps> = ({ count, size, duration, starColor }) => {
-  const boxShadow = useMemo(
-    () => generateStars(count, starColor),
-    [count, starColor]
-  );
-  const style = { width: `${size}px`, height: `${size}px`, boxShadow };
+  const boxShadow = useMemo(() => generateStars(count), [count]);
+  const style = { width: `${size}px`, height: `${size}px`, color: starColor, boxShadow };
 
   return (
     <motion.div
@@ -83,11 +80,11 @@ const StarsBackground: React.FC<StarsBackgroundProps> = ({ theme }) => {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
       <div className="absolute inset-0" style={{ background: isDark ? DARK_BG : LIGHT_BG }} />
-      <motion.div style={{ x: springX, y: springY }}>
-        <StarLayer count={1100} size={1 * starSizeMultiplier} duration={60} starColor={starColor} />
-        <StarLayer count={500} size={2 * starSizeMultiplier} duration={120} starColor={starColor} />
-        <StarLayer count={220} size={3 * starSizeMultiplier} duration={180} starColor={starColor} />
-        <StarLayer count={80} size={4 * starSizeMultiplier} duration={240} starColor={starColor} />
+      <motion.div style={{ x: springX, y: springY, willChange: 'transform' }}>
+        <StarLayer count={400} size={1 * starSizeMultiplier} duration={60} starColor={starColor} />
+        <StarLayer count={200} size={2 * starSizeMultiplier} duration={120} starColor={starColor} />
+        <StarLayer count={100} size={3 * starSizeMultiplier} duration={180} starColor={starColor} />
+        <StarLayer count={40} size={4 * starSizeMultiplier} duration={240} starColor={starColor} />
       </motion.div>
     </div>
   );

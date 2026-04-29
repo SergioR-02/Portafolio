@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
     <section
       id="home"
       ref={ref as React.RefObject<HTMLElement>}
-      className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 py-24 transition-all duration-700 ease-out transform md:px-8 lg:px-32 ${isDark ? 'bg-black' : 'bg-slate-50'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 py-24 transition-[opacity,transform] duration-700 ease-out md:px-8 lg:px-32 ${isDark ? 'bg-black' : 'bg-slate-50'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       <div className="absolute inset-0">
         <GLSLHills width="100%" height="100%" cameraZ={120} planeSize={256} speed={0.45} />

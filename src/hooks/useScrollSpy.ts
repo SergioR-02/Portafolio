@@ -10,10 +10,8 @@ export function useScrollSpy(
   useEffect(() => {
     if (!enabled) return;
 
-    // A section is "active" when its top edge is within this many px from the
-    // viewport top.  The extra 40 px buffer absorbs sub-pixel rounding and the
-    // gap between the last smooth-scroll event and the final resting position.
     const threshold = headerHeight + 40;
+    let rafId = 0;
 
     const detect = () => {
       let current = sectionIds[0];
@@ -24,12 +22,25 @@ export function useScrollSpy(
           current = id;
         }
       }
-      setActiveSection(current);
+      setActiveSection((prev) => (prev === current ? prev : current));
     };
 
-    window.addEventListener('scroll', detect, { passive: true });
+    // Throttle to one read per animation frame — cheap, keeps the same
+    // detection logic as before but eliminates per-pixel scroll thrashing.
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        detect();
+        rafId = 0;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
     detect();
-    return () => window.removeEventListener('scroll', detect);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, [sectionIds, enabled, headerHeight]);
 
   return activeSection;

@@ -22,7 +22,10 @@ export function useHeaderLogic() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      const next = window.scrollY > 10;
+      setIsScrolled((prev) => (prev === next ? prev : next));
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

@@ -60,9 +60,10 @@ export function PillNav({
     >
       <nav
         className={[
-          'pointer-events-auto flex items-center rounded-full border transition-all duration-500 ease-in-out',
+          'pointer-events-auto flex items-center rounded-full border duration-500 ease-in-out',
+          'transition-[background-color,backdrop-filter,border-color,box-shadow]',
           isScrolled
-            ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-2xl border-gray-200/60 dark:border-white/[0.08] shadow-2xl shadow-black/10 dark:shadow-black/50'
+            ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl border-gray-200/60 dark:border-white/[0.08] shadow-2xl shadow-black/10 dark:shadow-black/50'
             : 'bg-transparent border-transparent shadow-none',
         ].join(' ')}
       >
@@ -119,7 +120,7 @@ export function PillNav({
           <button
             onClick={onLanguageToggle}
             className={[
-              'px-2.5 py-1.5 text-xs font-bold rounded-full transition-all duration-200 select-none',
+              'px-2.5 py-1.5 text-xs font-bold rounded-full transition-[color,background-color] duration-200 select-none',
               isScrolled
                 ? 'text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.07]'
                 : ghostControl,
@@ -131,7 +132,7 @@ export function PillNav({
           <button
             onClick={toggleTheme}
             className={[
-              'p-1.5 rounded-full transition-all duration-200',
+              'p-1.5 rounded-full transition-[color,background-color] duration-200',
               isScrolled
                 ? 'text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.07]'
                 : ghostControl,
