@@ -11,7 +11,7 @@ const AboutMe: React.FC = () => {
     <section
       id="about"
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-24 transition-all duration-700 ease-out transform ${
+      className={`py-24 transition-[opacity,transform] duration-700 ease-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >

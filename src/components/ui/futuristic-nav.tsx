@@ -61,9 +61,9 @@ export function PillNav({
       <nav
         className={[
           'pointer-events-auto flex items-center rounded-full border duration-500 ease-in-out',
-          'transition-[background-color,backdrop-filter,border-color,box-shadow]',
+          'transition-[background-color,border-color,box-shadow]',
           isScrolled
-            ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl border-gray-200/60 dark:border-white/[0.08] shadow-2xl shadow-black/10 dark:shadow-black/50'
+            ? 'bg-white/85 dark:bg-gray-950/85 backdrop-blur-md border-gray-200/60 dark:border-white/[0.08] shadow-2xl shadow-black/10 dark:shadow-black/50'
             : 'bg-transparent border-transparent shadow-none',
         ].join(' ')}
       >

@@ -13,7 +13,7 @@ const BlurFade: React.FC<BlurFadeProps> = ({ children, delay = 0, className = ''
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className={`transition-all duration-700 ease-out will-change-transform ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-sm translate-y-4'} ${className}`}
+      className={`transition-[opacity,filter,transform] duration-700 ease-out ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-sm translate-y-4'} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
