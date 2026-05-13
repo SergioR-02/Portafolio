@@ -28,24 +28,14 @@
     "title": "Experiencia",
     "items": [
       {
-        "role": "Tutor de Programación",
-        "entity": "Universidad Nacional de Colombia",
-        "period": "Abr – Ago 2025",
-        "location": "",
-        "points": [
-          "Guié a estudiantes en conceptos fundamentales de programación: técnicas de debugging, diseño de algoritmos y descomposición de problemas",
-          "Gestioné la logística de sesiones y el seguimiento académico para apoyar un aprendizaje estructurado y orientado a resultados"
-        ]
-      },
-      {
         "role": "Desarrollador Frontend",
-        "entity": "Sitlen",
-        "period": "May 2024 – Oct 2025",
+        "entity": "AUPA — Facultad de Ingeniería, Universidad Nacional de Colombia",
+        "period": "Dic 2025 – Actualidad",
         "location": "Bogotá D.C., Colombia",
         "points": [
-          "Desarrollé e implementé componentes UI responsivos con React, TypeScript y Tailwind CSS; coordiné trabajo multifuncional mediante JIRA y Git Flow",
-          "Apliqué buenas prácticas SEO y optimizaciones de rendimiento — code splitting y lazy loading — mejorando métricas clave del producto",
-          "Establecí patrones de diseño atómico en el código base, reduciendo duplicación y acelerando la entrega de funcionalidades"
+          "Mantuve servicios de manera autónoma utilizando contenedores Docker, servidores AWS EC2 y Nginx, asegurando alta disponibilidad y rendimiento de las aplicaciones",
+          "Implementé Redux Toolkit para la gestión del estado, asegurando un comportamiento predecible y escalable en el manejo de flujos de datos complejos en el frontend",
+          "Lideré la optimización y rediseño del portal web AESCI con fases de testing manual y corrección de vulnerabilidades/bugs en la interfaz; el resultado fue un código más limpio que mejoró la accesibilidad y redujo los tiempos de carga en un 30%"
         ]
       },
       {
@@ -56,6 +46,27 @@
         "points": [
           "Realicé mantenimiento y actualización de contenido en el sitio oficial de la IUB, resolviendo inconsistencias de layout y problemas de compatibilidad",
           "Elaboré un manual de uso del CMS que permite al personal no técnico gestionar contenido de forma autónoma"
+        ]
+      },
+      {
+        "role": "Desarrollador FullStack",
+        "entity": "Sitlen",
+        "period": "May 2024 – Oct 2025",
+        "location": "Bogotá D.C., Colombia",
+        "points": [
+          "Lideré el diseño de arquitectura e implementé endpoints y lógica de negocio para gestionar estudiantes, cursos, matrículas y sus relaciones, garantizando consistencia de datos y reglas de dominio",
+          "Documenté la API con Swagger/OpenAPI y verifiqué endpoints con Postman, asegurando la calidad del producto",
+          "Desarrollé e implementé componentes UI responsivos con React, TypeScript y Tailwind CSS; coordiné trabajo multifuncional mediante JIRA y Git Flow"
+        ]
+      },
+      {
+        "role": "Tutor de Programación",
+        "entity": "Universidad Nacional de Colombia",
+        "period": "Abr – Ago 2025",
+        "location": "",
+        "points": [
+          "Guié a estudiantes en conceptos fundamentales de programación: técnicas de debugging, diseño de algoritmos y descomposición de problemas",
+          "Gestioné la logística de sesiones y el seguimiento académico para apoyar un aprendizaje estructurado y orientado a resultados"
         ]
       }
     ],

@@ -28,24 +28,14 @@
     "title": "Experience",
     "items": [
       {
-        "role": "Programming Tutor",
-        "entity": "Universidad Nacional de Colombia",
-        "period": "Apr – Aug 2025",
-        "location": "",
-        "points": [
-          "Guided students through core programming concepts including debugging techniques, algorithm design, and problem decomposition",
-          "Managed session logistics and academic progress tracking to support structured, outcome-focused learning"
-        ]
-      },
-      {
         "role": "Frontend Developer",
-        "entity": "Sitlen",
-        "period": "May 2024 – Oct 2025",
+        "entity": "AUPA — School of Engineering, Universidad Nacional de Colombia",
+        "period": "Dec 2025 – Present",
         "location": "Bogotá D.C., Colombia",
         "points": [
-          "Developed and shipped responsive UI features in React, TypeScript, and Tailwind CSS; coordinated cross-functional work via JIRA and Git Flow",
-          "Applied SEO best practices and performance optimizations — code splitting and lazy loading — improving key product metrics",
-          "Established atomic design patterns across the codebase, reducing duplication and accelerating feature delivery velocity"
+          "Maintained services autonomously using Docker containers, AWS EC2 instances, and Nginx, ensuring high availability and application performance",
+          "Implemented Redux Toolkit for state management, ensuring predictable and scalable behavior when handling complex data flows on the frontend",
+          "Led the optimization and redesign of the AESCI web portal with manual testing phases and UI vulnerability/bug fixes; the result was cleaner code that improved accessibility and reduced load times by 30%"
         ]
       },
       {
@@ -56,6 +46,27 @@
         "points": [
           "Performed maintenance and content updates on the official IUB institutional website, resolving layout inconsistencies and cross-browser compatibility issues",
           "Authored a structured CMS usage manual enabling non-technical staff to manage content independently"
+        ]
+      },
+      {
+        "role": "FullStack Developer",
+        "entity": "Sitlen",
+        "period": "May 2024 – Oct 2025",
+        "location": "Bogotá D.C., Colombia",
+        "points": [
+          "Led architecture design and implemented endpoints and business logic to manage students, courses, enrollments, and their relationships, ensuring data consistency and domain rules",
+          "Documented the API with Swagger/OpenAPI and verified endpoints with Postman, ensuring product quality",
+          "Developed and shipped responsive UI components in React, TypeScript, and Tailwind CSS; coordinated cross-functional work via JIRA and Git Flow"
+        ]
+      },
+      {
+        "role": "Programming Tutor",
+        "entity": "Universidad Nacional de Colombia",
+        "period": "Apr – Aug 2025",
+        "location": "",
+        "points": [
+          "Guided students through core programming concepts including debugging techniques, algorithm design, and problem decomposition",
+          "Managed session logistics and academic progress tracking to support structured, outcome-focused learning"
         ]
       }
     ],
