@@ -16,10 +16,22 @@ const Footer         = lazy(() => import('./components/template/Footer'));
 const ProjectDetail  = lazy(() => import('./components/template/ProjectDetail'));
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const tryScroll = (attempts = 0) => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'instant' });
+        } else if (attempts < 10) {
+          setTimeout(() => tryScroll(attempts + 1), 50);
+        }
+      };
+      tryScroll();
+      return;
+    }
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
