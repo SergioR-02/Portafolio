@@ -14,7 +14,7 @@
 
 ## 📄 Hoja de Vida
 
-[Ver Hoja de Vida (CV) en PDF](https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing)
+[Ver Hoja de Vida (CV) en PDF](https://drive.google.com/drive/u/0/folders/1_rbxF7NgMX90vtEdpSDn4iK9xLIPDX8b?usp=sharing)
 
 ---
 
@@ -158,7 +158,7 @@ src/
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sergio_Ruiz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sergio-ruiz-75818a28b/)
 [![GitHub](https://img.shields.io/badge/GitHub-SergioR--02-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SergioR-02)
 [![Email](https://img.shields.io/badge/Email-sergioruiz456@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sergioruiz456@gmail.com)
-[![CV](https://img.shields.io/badge/Hoja_de_Vida-PDF-blue?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view?usp=sharing)
+[![CV](https://img.shields.io/badge/Hoja_de_Vida-PDF-blue?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/drive/u/0/folders/1_rbxF7NgMX90vtEdpSDn4iK9xLIPDX8b?usp=sharing)
 
 ---
 

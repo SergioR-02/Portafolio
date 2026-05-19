@@ -28,6 +28,7 @@
     "title": "Experiencia",
     "items": [
       {
+        "hidden": true,
         "role": "Desarrollador Frontend",
         "entity": "AUPA — Facultad de Ingeniería, Universidad Nacional de Colombia",
         "period": "Dic 2025 – Actualidad",

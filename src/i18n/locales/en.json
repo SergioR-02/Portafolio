@@ -28,6 +28,7 @@
     "title": "Experience",
     "items": [
       {
+        "hidden": true,
         "role": "Frontend Developer",
         "entity": "AUPA — School of Engineering, Universidad Nacional de Colombia",
         "period": "Dec 2025 – Present",

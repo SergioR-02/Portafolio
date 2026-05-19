@@ -6,6 +6,7 @@ import CertificationsTitle from '../molecules/CertificationsTitle';
 import CertificationCard from '../molecules/CertificationCard';
 
 interface ExperienceItem {
+  hidden?: boolean;
   role: string;
   entity: string;
   period: string;
@@ -76,7 +77,7 @@ const DescBlock: React.FC<{ item: ExperienceItem }> = ({ item }) => (
 const Experience: React.FC = () => {
   const [sectionRef, isVisible] = useScrollAnimation();
   const { t } = useTranslation();
-  const items = t('experience.items', { returnObjects: true }) as ExperienceItem[];
+  const items = (t('experience.items', { returnObjects: true }) as ExperienceItem[]).filter(item => !item.hidden);
 
   const timelineRef = useRef<HTMLDivElement>(null);
   const lineProgress = useTimelineProgress(timelineRef);

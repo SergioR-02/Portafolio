@@ -9,7 +9,7 @@ const icons = [
   { href: 'https://github.com/SergioR-02', label: 'GitHub', icon: Github },
   { href: 'https://www.linkedin.com/in/sergio-ruiz-75818a28b', label: 'LinkedIn', icon: Linkedin },
   { href: 'mailto:sergioruiz456@gmail.com', label: 'Email', icon: Mail },
-  { href: 'https://drive.google.com/drive/u/0/folders/1_rbxF7NgMX90vtEdpSDn4iK9xLIPDX8b', label: 'CV PDF', icon: FileText },
+  { href: 'https://drive.google.com/file/d/1CGHsYLzFF-4TdbsIq5Pv1EjEnxPSAhhq/view', label: 'CV PDF', icon: FileText },
 ];
 
 const SocialIcons: React.FC<SocialIconsProps> = ({ className = '' }) => (
