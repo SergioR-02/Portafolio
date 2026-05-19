@@ -15,7 +15,7 @@ const HeroButtons: React.FC = () => {
         {t('hero.viewProjects')}
       </Button>
       <a
-        href="https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view"
+        href="https://drive.google.com/drive/u/0/folders/1_rbxF7NgMX90vtEdpSDn4iK9xLIPDX8b"
         target="_blank"
         rel="noopener noreferrer"
       >

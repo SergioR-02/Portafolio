@@ -41,7 +41,7 @@ export function FooterSection() {
         { title: 'GitHub', href: 'https://github.com/SergioR-02', icon: Github },
         { title: 'LinkedIn', href: 'https://www.linkedin.com/in/sergio-ruiz-75818a28b', icon: Linkedin },
         { title: 'Email', href: 'mailto:sergioruiz456@gmail.com', icon: Mail },
-        { title: 'CV / Resume', href: 'https://drive.google.com/file/d/1d5ckFTCSephhdBYMrK_ECwPFp3SZPK2B/view', icon: FileText },
+        { title: 'CV / Resume', href: 'https://drive.google.com/drive/u/0/folders/1_rbxF7NgMX90vtEdpSDn4iK9xLIPDX8b', icon: FileText },
       ],
     },
   ];
