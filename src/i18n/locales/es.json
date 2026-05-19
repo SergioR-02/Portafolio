@@ -33,9 +33,9 @@
         "period": "Dic 2025 – Actualidad",
         "location": "Bogotá D.C., Colombia",
         "points": [
-          "Mantuve servicios de manera autónoma utilizando contenedores Docker, servidores AWS EC2 y Nginx, asegurando alta disponibilidad y rendimiento de las aplicaciones",
-          "Implementé Redux Toolkit para la gestión del estado, asegurando un comportamiento predecible y escalable en el manejo de flujos de datos complejos en el frontend",
-          "Lideré la optimización y rediseño del portal web AESCI con fases de testing manual y corrección de vulnerabilidades/bugs en la interfaz; el resultado fue un código más limpio que mejoró la accesibilidad y redujo los tiempos de carga en un 30%"
+          "Gestioné servicios con Docker, AWS EC2 y Nginx, garantizando alta disponibilidad y rendimiento",
+          "Implementé Redux Toolkit para una gestión de estado predecible y escalable en flujos de datos complejos",
+          "Lideré la optimización/rediseño del portal AESCI con testing manual y corrección de bugs/vulnerabilidades; mejoré accesibilidad y reduje tiempos de carga un 30%"
         ]
       },
       {
@@ -44,8 +44,9 @@
         "period": "Dic 2025",
         "location": "",
         "points": [
-          "Realicé mantenimiento y actualización de contenido en el sitio oficial de la IUB, resolviendo inconsistencias de layout y problemas de compatibilidad",
-          "Elaboré un manual de uso del CMS que permite al personal no técnico gestionar contenido de forma autónoma"
+          "Realicé mantenimiento y actualizaciones editoriales del sitio institucional de la IUB, cuidando precisión, coherencia visual y metadatos SEO",
+          "Corregí inconsistencias de UI (layout shifts, tipografía y compatibilidad entre navegadores) para mejorar la coherencia visual",
+          "Redacté una guía de uso del CMS para que el personal no técnico publicara contenido de forma autónoma"
         ]
       },
       {
