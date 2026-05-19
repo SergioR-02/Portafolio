@@ -5,6 +5,7 @@ import {
   SiReact, SiTypescript, SiStrapi, SiSqlite, SiTailwindcss,
   SiPython, SiFastapi, SiOpencv, SiDocker, SiNodedotjs,
   SiMysql, SiExpress, SiThreedotjs, SiFlask,
+  SiNextdotjs, SiPostgresql, SiMongodb, SiSocketdotio,
 } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 
@@ -13,6 +14,7 @@ type TechEntry = { icon: IconType; color: string };
 const TECH: Record<string, TechEntry> = {
   'React':        { icon: SiReact,       color: 'text-cyan-400' },
   'TypeScript':   { icon: SiTypescript,  color: 'text-blue-400' },
+  'Next.js':      { icon: SiNextdotjs,   color: 'text-gray-300' },
   'Strapi':       { icon: SiStrapi,      color: 'text-indigo-400' },
   'SQLite':       { icon: SiSqlite,      color: 'text-sky-400' },
   'Tailwind CSS': { icon: SiTailwindcss, color: 'text-teal-400' },
@@ -22,6 +24,9 @@ const TECH: Record<string, TechEntry> = {
   'Docker':       { icon: SiDocker,      color: 'text-sky-400' },
   'Node.js':      { icon: SiNodedotjs,   color: 'text-green-400' },
   'MySQL':        { icon: SiMysql,       color: 'text-blue-300' },
+  'PostgreSQL':   { icon: SiPostgresql,  color: 'text-blue-300' },
+  'MongoDB':      { icon: SiMongodb,     color: 'text-green-500' },
+  'Socket.io':    { icon: SiSocketdotio, color: 'text-gray-300' },
   'Express':      { icon: SiExpress,     color: 'text-gray-300' },
   'Three.js':     { icon: SiThreedotjs,  color: 'text-gray-300' },
   'Flask':        { icon: SiFlask,       color: 'text-gray-300' },

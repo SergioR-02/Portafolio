@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
     features: string[];
   }>;
 
-  const projects = PROJECT_META.map((meta) => {
+  const projects = PROJECT_META.filter((meta) => !('hidden' in meta) || !meta.hidden).map((meta) => {
     const translated = translatedItems.find(item => item.id === meta.id)!;
     return { ...meta, ...translated };
   });

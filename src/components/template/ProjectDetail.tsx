@@ -86,15 +86,17 @@ const ProjectDetail: React.FC = () => {
                 {t('common.viewProject')}
               </a>
             )}
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
-            >
-              <Github className="w-3.5 h-3.5" />
-              {t('common.viewCode')}
-            </a>
+            {!!project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
+              >
+                <Github className="w-3.5 h-3.5" />
+                {t('common.viewCode')}
+              </a>
+            )}
           </div>
 
           {/* Gallery */}
