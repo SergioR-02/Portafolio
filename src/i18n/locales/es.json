@@ -125,6 +125,27 @@
         "features": ["Búsqueda avanzada por título", "Filtros dinámicos por nivel", "Diseño responsivo", "Tema oscuro moderno", "Renderizado de Rich Text"]
       },
       {
+        "id": 7,
+        "title": "Sitlen - Gestión Académica",
+        "description": "Sistema para gestionar estudiantes, cursos y matrículas, con API documentada y una interfaz web responsiva.",
+        "fullDescription": "Proyecto full stack enfocado en reglas de dominio y consistencia de datos para la gestión de estudiantes, cursos, matrículas y sus relaciones. Incluye endpoints y lógica de negocio, documentación con Swagger/OpenAPI, verificación con Postman y componentes UI responsivos en React.",
+        "features": ["Gestión de estudiantes, cursos y matrículas", "Reglas de dominio y consistencia de datos", "API documentada con Swagger/OpenAPI", "Verificación de endpoints con Postman", "UI responsiva en React"]
+      },
+      {
+        "id": 8,
+        "title": "UN Wheels - Movilidad Compartida",
+        "description": "Ecosistema de movilidad compartida para la comunidad UNAL con reservas concurrentes, chat y notificaciones en tiempo real.",
+        "fullDescription": "UN Wheels centraliza la oferta y demanda de rutas compartidas entre estudiantes (verificación @unal.edu.co). Permite publicar rutas, reservar cupos con control estricto de concurrencia y comunicarse en tiempo real. La arquitectura se basa en microservicios con un API Gateway, comunicación asíncrona vía RabbitMQ y WebSockets para chat y notificaciones.",
+        "features": ["Microservicios + API Gateway", "Comunicación asíncrona con RabbitMQ", "Chat y notificaciones en tiempo real (WebSockets)", "Gestión de rutas y reservas con control de concurrencia", "Búsqueda geoespacial por radio y texto"]
+      },
+      {
+        "id": 9,
+        "title": "FigmaLand React - Mini Plantilla",
+        "description": "Mini plantilla en React + TypeScript (Vite) con componentes UI básicos y estilos en CSS clásico.",
+        "fullDescription": "Pequeña aplicación creada con React + TypeScript usando Vite. Incluye componentes simples (Navbar, Hero, Features, Contact, Footer) y estilos con CSS en archivos. Ideal como base para landing pages y prácticas de estructura de componentes.",
+        "features": ["Vite (dev server + build)", "Componentes: Navbar/Hero/Features/Contact/Footer", "Estilos con CSS clásico", "Estructura por componentes", "Linting con ESLint"]
+      },
+      {
         "id": 5,
         "title": "Objetos Perdidos UNAL",
         "description": "Plataforma para gestionar objetos perdidos y encontrados en la Universidad Nacional, construida con arquitectura MVC y Atomic Design.",

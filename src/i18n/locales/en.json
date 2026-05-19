@@ -125,6 +125,27 @@
         "features": ["Advanced title search", "Dynamic level filters", "Responsive design", "Modern dark mode", "Rich Text rendering"]
       },
       {
+        "id": 7,
+        "title": "Sitlen - Academic Management",
+        "description": "System to manage students, courses, and enrollments, with documented APIs and a responsive web UI.",
+        "fullDescription": "A full stack project focused on domain rules and data consistency for managing students, courses, enrollments, and their relationships. It includes endpoints and business logic, Swagger/OpenAPI documentation, Postman verification, and responsive UI components in React.",
+        "features": ["Students/courses/enrollments management", "Domain rules and data consistency", "Swagger/OpenAPI documentation", "Endpoint verification with Postman", "Responsive React UI"]
+      },
+      {
+        "id": 8,
+        "title": "UN Wheels - Shared Mobility",
+        "description": "Shared mobility ecosystem for the UNAL community with concurrent bookings, chat, and real-time notifications.",
+        "fullDescription": "UN Wheels centralizes supply and demand for shared routes across students (verified via @unal.edu.co). Users can publish routes, reserve seats with strict concurrency control, and communicate in real time. The architecture is built around microservices with an API Gateway, asynchronous messaging via RabbitMQ, and WebSockets for chat and notifications.",
+        "features": ["Microservices + API Gateway", "Asynchronous messaging with RabbitMQ", "Real-time chat and notifications (WebSockets)", "Route publishing and seat booking with concurrency control", "Geospatial search (radius + text)"]
+      },
+      {
+        "id": 9,
+        "title": "FigmaLand React - Mini Template",
+        "description": "Mini React + TypeScript template (Vite) with basic UI sections and classic CSS styling.",
+        "fullDescription": "A small React + TypeScript app built with Vite. Includes simple components (Navbar, Hero, Features, Contact, Footer) and uses classic CSS files for styling. A clean starter for landing pages and component-structure practice.",
+        "features": ["Vite (dev server + build)", "Components: Navbar/Hero/Features/Contact/Footer", "Classic CSS styling", "Component-based structure", "ESLint configured"]
+      },
+      {
         "id": 5,
         "title": "UNAL Lost Objects",
         "description": "Platform to manage lost and found objects at the National University, built with MVC architecture and Atomic Design.",
