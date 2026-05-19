@@ -1,10 +1,10 @@
-import React, { useMemo, useEffect, useRef } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import React, { useEffect, useMemo, useRef } from 'react';
+import { useReducedMotion } from 'motion/react';
 
 const DARK_BG = 'linear-gradient(to bottom, #06060c 0%, #020204 55%, #000000 100%)';
 const LIGHT_BG = 'linear-gradient(to bottom, #ffffff 0%, #fcfcfd 55%, #f4f7fb 100%)';
 const STAR_FIELD_HEIGHT = 4000;
-const STAR_FIELD_SPREAD = 7000;
+const STAR_FIELD_SPREAD = 8000;
 
 function generateStars(count: number): string {
   const shadows: string[] = [];
@@ -26,18 +26,30 @@ interface StarLayerProps {
 
 const StarLayer: React.FC<StarLayerProps> = ({ count, size, duration, starColor, animate }) => {
   const boxShadow = useMemo(() => generateStars(count), [count]);
-  const style = { width: `${size}px`, height: `${size}px`, color: starColor, boxShadow };
+  const starStyle: React.CSSProperties = {
+    width: `${size}px`,
+    height: `${size}px`,
+    color: starColor,
+    boxShadow,
+  };
+
+  const layerStyle: React.CSSProperties = {
+    height: `${STAR_FIELD_HEIGHT}px`,
+    animationDuration: `${duration}s`,
+    ['--star-field-height' as unknown as keyof React.CSSProperties]: `${STAR_FIELD_HEIGHT}px`,
+  };
 
   return (
-    <motion.div
-      animate={animate ? { y: [0, -STAR_FIELD_HEIGHT] } : undefined}
-      transition={animate ? { repeat: Infinity, duration, ease: 'linear' } : undefined}
-      className="absolute top-0 left-0 w-full"
-      style={{ height: `${STAR_FIELD_HEIGHT}px` }}
+    <div
+      className={`absolute top-0 left-0 w-full ${animate ? 'stars-scroll' : ''}`}
+      style={layerStyle}
     >
-      <div className="absolute bg-transparent rounded-full" style={style} />
-      <div className="absolute bg-transparent rounded-full" style={{ ...style, top: `${STAR_FIELD_HEIGHT}px` }} />
-    </motion.div>
+      <div className="absolute bg-transparent rounded-full" style={starStyle} />
+      <div
+        className="absolute bg-transparent rounded-full"
+        style={{ ...starStyle, top: `${STAR_FIELD_HEIGHT}px` }}
+      />
+    </div>
   );
 };
 
@@ -52,10 +64,11 @@ const StarsBackground: React.FC<StarsBackgroundProps> = ({ theme }) => {
   const shouldReduceMotion = useReducedMotion();
   const parallaxRef = useRef<HTMLDivElement>(null);
 
-  // Direct transform on mousemove (no spring) — keeps the heavy box-shadow
-  // layer on a single composited transform without 60fps spring math.
   useEffect(() => {
     if (shouldReduceMotion) return;
+    if (typeof window === 'undefined') return;
+    if (!window.matchMedia?.('(pointer: fine)').matches) return;
+
     const el = parallaxRef.current;
     if (!el) return;
 
@@ -69,8 +82,8 @@ const StarsBackground: React.FC<StarsBackgroundProps> = ({ theme }) => {
     };
 
     const onMouseMove = (e: MouseEvent) => {
-      pendingX = -(e.clientX - window.innerWidth / 2) * 0.015;
-      pendingY = -(e.clientY - window.innerHeight / 2) * 0.015;
+      pendingX = -(e.clientX - window.innerWidth / 2) * 0.025;
+      pendingY = -(e.clientY - window.innerHeight / 2) * 0.025;
       if (rafId) return;
       rafId = requestAnimationFrame(apply);
     };
@@ -87,10 +100,14 @@ const StarsBackground: React.FC<StarsBackgroundProps> = ({ theme }) => {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
       <div className="absolute inset-0" style={{ background: isDark ? DARK_BG : LIGHT_BG }} />
-      <div ref={parallaxRef} style={{ willChange: 'transform' }}>
-        <StarLayer animate={animate} count={180} size={1 * starSizeMultiplier} duration={90} starColor={starColor} />
-        <StarLayer animate={animate} count={80}  size={2 * starSizeMultiplier} duration={150} starColor={starColor} />
-        <StarLayer animate={animate} count={40}  size={3 * starSizeMultiplier} duration={220} starColor={starColor} />
+      <div
+        ref={parallaxRef}
+        style={{ willChange: 'transform', transform: 'translate3d(0, 0, 0)' }}
+      >
+        <StarLayer animate={animate} count={1100} size={1 * starSizeMultiplier} duration={60} starColor={starColor} />
+        <StarLayer animate={animate} count={500} size={2 * starSizeMultiplier} duration={120} starColor={starColor} />
+        <StarLayer animate={animate} count={220} size={3 * starSizeMultiplier} duration={180} starColor={starColor} />
+        <StarLayer animate={animate} count={80} size={4 * starSizeMultiplier} duration={240} starColor={starColor} />
       </div>
     </div>
   );

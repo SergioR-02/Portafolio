@@ -33,9 +33,9 @@
         "period": "Dic 2025 – Actualidad",
         "location": "Bogotá D.C., Colombia",
         "points": [
-          "Mantuve servicios de manera autónoma utilizando contenedores Docker, servidores AWS EC2 y Nginx, asegurando alta disponibilidad y rendimiento de las aplicaciones",
-          "Implementé Redux Toolkit para la gestión del estado, asegurando un comportamiento predecible y escalable en el manejo de flujos de datos complejos en el frontend",
-          "Lideré la optimización y rediseño del portal web AESCI con fases de testing manual y corrección de vulnerabilidades/bugs en la interfaz; el resultado fue un código más limpio que mejoró la accesibilidad y redujo los tiempos de carga en un 30%"
+          "Gestioné servicios con Docker, AWS EC2 y Nginx, garantizando alta disponibilidad y rendimiento",
+          "Implementé Redux Toolkit para una gestión de estado predecible y escalable en flujos de datos complejos",
+          "Lideré la optimización/rediseño del portal AESCI con testing manual y corrección de bugs/vulnerabilidades; mejoré accesibilidad y reduje tiempos de carga un 30%"
         ]
       },
       {
@@ -44,8 +44,9 @@
         "period": "Dic 2025",
         "location": "",
         "points": [
-          "Realicé mantenimiento y actualización de contenido en el sitio oficial de la IUB, resolviendo inconsistencias de layout y problemas de compatibilidad",
-          "Elaboré un manual de uso del CMS que permite al personal no técnico gestionar contenido de forma autónoma"
+          "Realicé mantenimiento y actualizaciones editoriales del sitio institucional de la IUB, cuidando precisión, coherencia visual y metadatos SEO",
+          "Corregí inconsistencias de UI (layout shifts, tipografía y compatibilidad entre navegadores) para mejorar la coherencia visual",
+          "Redacté una guía de uso del CMS para que el personal no técnico publicara contenido de forma autónoma"
         ]
       },
       {
@@ -96,11 +97,18 @@
         "features": ["Reportes y búsqueda", "Chat en tiempo real", "Notificaciones en tiempo real", "Panel administrativo", "Arquitectura SOFEA"]
       },
       {
-        "id": 2,
-        "title": "DevCampus - Plataforma de Cursos",
-        "description": "Plataforma moderna de cursos online con búsqueda, filtros dinámicos y un panel de administración completo construido con Strapi.",
-        "fullDescription": "Una plataforma de cursos online moderna construida con React y Strapi CMS. Permite a los usuarios explorar, ver su temario, buscar cursos por título y filtrarlos dinámicamente por nivel de dificultad. Incluye un diseño responsive, tema oscuro y un panel de administración para la gestión de contenido.",
-        "features": ["Búsqueda avanzada por título", "Filtros dinámicos por nivel", "Diseño responsivo", "Tema oscuro moderno", "Renderizado de Rich Text"]
+        "id": 4,
+        "title": "Eventos UNAL - Sistema de Gestión de Eventos",
+        "description": "Gestión y visualización de eventos de la Universidad Nacional de Colombia (React + Strapi).",
+        "fullDescription": "Sistema web para la gestión y visualización de eventos de la Universidad Nacional de Colombia. Frontend en React + TypeScript + Vite y backend con Strapi v5 como Headless CMS. Incluye búsqueda dinámica, filtros por categoría, vistas detalladas, diseño responsive y modo claro/oscuro. Dockerizado y desplegado en Vercel (frontend) y Strapi Cloud (backend).",
+        "features": ["Listado y búsqueda dinámica de eventos", "Filtrado por categoría", "Vista detallada de cada evento", "Renderizado de Rich Text con @strapi/blocks-react-renderer", "Modo claro/oscuro persistente", "Dockerización y despliegue en la nube"]
+      },
+      {
+        "id": 6,
+        "title": "EcoScan 3D - Análisis de Reciclaje con IA",
+        "description": "Plataforma que utiliza IA para identificar y clasificar residuos a partir de imágenes, ofreciendo recomendaciones de reciclaje y visualizaciones 3D interactivas.",
+        "fullDescription": "EcoScan 3D es una innovadora plataforma web que educa sobre el reciclaje. Permite a los usuarios analizar residuos subiendo una imagen o usando su cámara en tiempo real. La aplicación combina la detección de objetos con YOLOv5, la generación de consejos personalizados con ChatGPT y una visualización 3D interactiva con Three.js, creando una experiencia educativa y atractiva.",
+        "features": ["Detección de residuos con IA (YOLOv5)", "Visualización 3D interactiva", "Consejos de reciclaje con ChatGPT", "Análisis desde imagen estática", "Detección en tiempo real (Cámara)", "Comunicación vía WebSockets"]
       },
       {
         "id": 3,
@@ -110,11 +118,11 @@
         "features": ["Detección de ingredientes con IA", "Bounding boxes sobre alimentos", "Carga de imágenes drag & drop", "API RESTful con FastAPI", "Visualización 3D interactiva"]
       },
       {
-        "id": 4,
-        "title": "Eventos UNAL - Sistema de Gestión de Eventos",
-        "description": "Gestión y visualización de eventos de la Universidad Nacional de Colombia (React + Strapi).",
-        "fullDescription": "Sistema web para la gestión y visualización de eventos de la Universidad Nacional de Colombia. Frontend en React + TypeScript + Vite y backend con Strapi v5 como Headless CMS. Incluye búsqueda dinámica, filtros por categoría, vistas detalladas, diseño responsive y modo claro/oscuro. Dockerizado y desplegado en Vercel (frontend) y Strapi Cloud (backend).",
-        "features": ["Listado y búsqueda dinámica de eventos", "Filtrado por categoría", "Vista detallada de cada evento", "Renderizado de Rich Text con @strapi/blocks-react-renderer", "Modo claro/oscuro persistente", "Dockerización y despliegue en la nube"]
+        "id": 2,
+        "title": "DevCampus - Plataforma de Cursos",
+        "description": "Plataforma moderna de cursos online con búsqueda, filtros dinámicos y un panel de administración completo construido con Strapi.",
+        "fullDescription": "Una plataforma de cursos online moderna construida con React y Strapi CMS. Permite a los usuarios explorar, ver su temario, buscar cursos por título y filtrarlos dinámicamente por nivel de dificultad. Incluye un diseño responsive, tema oscuro y un panel de administración para la gestión de contenido.",
+        "features": ["Búsqueda avanzada por título", "Filtros dinámicos por nivel", "Diseño responsivo", "Tema oscuro moderno", "Renderizado de Rich Text"]
       },
       {
         "id": 5,
@@ -122,13 +130,6 @@
         "description": "Plataforma para gestionar objetos perdidos y encontrados en la Universidad Nacional, construida con arquitectura MVC y Atomic Design.",
         "fullDescription": "Una plataforma web completa diseñada para gestionar eficientemente la pérdida y recuperación de objetos en los campus de la UNAL. Utiliza una arquitectura MVC en el backend con Express y TypeScript, y un sistema de diseño Atómico en el frontend con React para máxima escalabilidad y mantenimiento.",
         "features": ["Autenticación segura con JWT", "Testing & Development", "Creación y gestión de reportes", "Arquitectura backend MVC", "Diseño frontend Atómico"]
-      },
-      {
-        "id": 6,
-        "title": "EcoScan 3D - Análisis de Reciclaje con IA",
-        "description": "Plataforma que utiliza IA para identificar y clasificar residuos a partir de imágenes, ofreciendo recomendaciones de reciclaje y visualizaciones 3D interactivas.",
-        "fullDescription": "EcoScan 3D es una innovadora plataforma web que educa sobre el reciclaje. Permite a los usuarios analizar residuos subiendo una imagen o usando su cámara en tiempo real. La aplicación combina la detección de objetos con YOLOv5, la generación de consejos personalizados con ChatGPT y una visualización 3D interactiva con Three.js, creando una experiencia educativa y atractiva.",
-        "features": ["Detección de residuos con IA (YOLOv5)", "Visualización 3D interactiva", "Consejos de reciclaje con ChatGPT", "Análisis desde imagen estática", "Detección en tiempo real (Cámara)", "Comunicación vía WebSockets"]
       }
     ]
   },

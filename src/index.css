@@ -89,6 +89,15 @@ body {
   }
 }
 
+@keyframes stars-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, calc(var(--star-field-height, 4000px) * -1), 0);
+  }
+}
+
 /* Animation Classes */
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out;
@@ -129,6 +138,14 @@ body {
 
 .marquee-item {
   flex: 0 0 auto;
+}
+
+.stars-scroll {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation-name: stars-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 /* Animation Delays */

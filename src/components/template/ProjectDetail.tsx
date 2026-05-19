@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import StarsBackground from '../organisms/StarsBackground';
 import { PROJECT_META } from '../../data/projects';
+import ImageGallery from '../ui/image-gallery';
 
 interface TranslatedProject {
   id: number;
@@ -96,14 +97,11 @@ const ProjectDetail: React.FC = () => {
             </a>
           </div>
 
-          {/* Image */}
-            <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)] dark:border-gray-800 dark:bg-gray-900">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full object-cover"
-            />
-          </div>
+          {/* Gallery */}
+          <ImageGallery
+            images={[project.image, ...project.galleryImages]}
+            title={project.title}
+          />
         </div>
 
         {/* Description */}
